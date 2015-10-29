@@ -21,6 +21,16 @@
         <url-pattern>/QuickServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ShowAllFlights</servlet-name>
+        <servlet-class>servlet.ShowAllFlights</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ShowAllFlights</servlet-name>
+        <url-pattern>/ShowAllFlights</url-pattern>
+    </servlet-mapping>
+
 
 
 
