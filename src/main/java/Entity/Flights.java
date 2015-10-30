@@ -68,6 +68,10 @@ public class Flights {
         this.departureDate = Timestamp.valueOf(LocalDateTime.parse(date, FORMATTER));
     }
 
+    public LocalDateTime getLocalDateTime(){
+        return departureDate.toLocalDateTime();
+    }
+
     public int getEmptySeat() {
         return emptySeat;
     }
@@ -78,8 +82,8 @@ public class Flights {
 
     public String toString() {
 
-        String flight = "" + getId() + " " + getCity().getCityName() + " " + getEmptySeat() + " " + getDepartureDate();
-        return flight;
+        return getCity().getCityName() + " " + getEmptySeat() + " " + getDepartureDate();
+
     }
 
 

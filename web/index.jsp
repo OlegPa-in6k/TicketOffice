@@ -11,12 +11,20 @@
   <title>Ticket Office</title>
 </head>
 <body>
-<a href="/QuickServlet">Click here to send GET request</a>
-<a href="/ShowAllFlights">GET Request AllFlights</a>
+<%--<a href="/QuickServlet">Click here to send GET request</a>
+<a href="/ShowAllFlights">GET Request AllFlights</a>--%>
 
 <br/><br/>
 
-<form action="QuickServlet" method="post">
+<form action="ManagerOffice.jsp" method="post">
+  <input type="submit" value="ManagerOffice" />
+</form>
+
+<form action="TicketOffice.jsp" method="post">
+  <input type="submit" value="TicketOffice" />
+</form>
+
+<%--<form action="QuickServlet" method="post">
   Width: <input type="text" size="5" name="width"/>
   &nbsp;&nbsp;
   Height <input type="text" size="5" name="height"/>
@@ -27,7 +35,10 @@
 
 <form action="ShowAllFlights" method="post">
   <input type="submit" value="ShowAllFlights" />
-</form>
+</form>--%>
+
+
+
 
 </body>
 </html>

@@ -6,6 +6,15 @@
     http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          id="WebApp_ID" version="3.0">
 
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
     <display-name>TicketOffice</display-name>
 
     <servlet>
@@ -13,12 +22,18 @@
         <servlet-class>servlet.QuickServlet</servlet-class>
 
     </servlet>
-
-
-
     <servlet-mapping>
         <servlet-name>QuickServlet</servlet-name>
         <url-pattern>/QuickServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TicketOffice</servlet-name>
+        <servlet-class>servlet.AddNewFlight</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TicketOffice</servlet-name>
+        <url-pattern>/TicketOffice</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -28,8 +43,30 @@
 
     <servlet-mapping>
         <servlet-name>ShowAllFlights</servlet-name>
-        <url-pattern>/ShowAllFlights</url-pattern>
+        <url-pattern>/TicketOffice/ShowAllFlights</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddNewFlight</servlet-name>
+        <servlet-class>servlet.AddNewFlight</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddNewFlight</servlet-name>
+        <url-pattern>/ManagerOffice/AddNewFlight</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BuyTicket</servlet-name>
+        <servlet-class>servlet.BuyTicket</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>BuyTicket</servlet-name>
+        <url-pattern>/TicketOffice/BuyTicket</url-pattern>
+    </servlet-mapping>
+
+
 
 
 

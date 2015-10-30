@@ -22,10 +22,10 @@ public class Main {
         InputController controller =  context.getBean(InputController.class);
         controller.startChoose();
 
-      /*  CityImpl city = context.getBean(CityImpl.class);
+        CityImpl city = context.getBean(CityImpl.class);
         for(City cc: city.getAll()){
             System.out.println(cc.getCityId() + " " + cc.getCityName());
-        }*/
+        }
 
     }
 
