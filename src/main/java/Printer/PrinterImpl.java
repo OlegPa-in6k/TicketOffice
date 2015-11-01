@@ -87,7 +87,7 @@ public class PrinterImpl extends AbstractPrinter {
 
     @Override
     public void printMainMassage() {
-        System.out.println("1 - ManagerOffice\n 2 - AddNewFlight\n 0 - Exit");
+        System.out.println("1 - ManagerOffice\n 2 - TicketOffice\n 0 - Exit");
     }
 
     @Override

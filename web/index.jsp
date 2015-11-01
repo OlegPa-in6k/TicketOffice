@@ -10,7 +10,7 @@
 <head>
   <title>Ticket Office</title>
 </head>
-<body>
+<body style="text-align: center">
 <%--<a href="/QuickServlet">Click here to send GET request</a>
 <a href="/ShowAllFlights">GET Request AllFlights</a>--%>
 

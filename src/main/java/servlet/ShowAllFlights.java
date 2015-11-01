@@ -22,7 +22,7 @@ import java.io.PrintWriter;
  */
 public class ShowAllFlights extends HttpServlet {
 
-    FlightImpl flightSearch;
+
     TicketOffice ticketOffice;
 
     @Override
@@ -38,6 +38,20 @@ public class ShowAllFlights extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
 
+
+        String a = "<body><table>";
+
+        for(Flights flight: ticketOffice.getAllFlights()){
+            a+="<form action=/TicketOffice/BuyTicket method=post>";
+            a+="<tr><td>" + flight.getCity().getCityName() + "</td>";
+            a+="<td>" + flight.getEmptySeat() + "</td>";
+            a+="<td>" + flight.getDepartureDate() + "</td>";
+            a+="<td>" + "<input type=\"submit\" value=\"BuyTicket\" />" + "</td></tr></form>";
+
+
+        }
+        a+="</table></body>";
+
         String s="<body><table>";
         for(Flights flight: ticketOffice.getAllFlights()){
             s+="<td><td>" + flight.toString() + "</td></tr>";
@@ -50,7 +64,7 @@ public class ShowAllFlights extends HttpServlet {
         s+=bottom + "</table></body>";
 
         PrintWriter writer = response.getWriter();
-        writer.println("<html>" + s + "</html>");
+        writer.println("<html>" + a + "</html>");
         writer.flush();
     }
 
@@ -61,14 +75,17 @@ public class ShowAllFlights extends HttpServlet {
             throws IOException {
 
         String cityName = request.getParameter("cityName");
-        String buyBottom =" <form action=/TicketOffice/BuyTicket method=post>\n" +
+        String buyBottom =
+
+                " <form action=/TicketOffice/BuyTicket method=post>\n" +
                 " <input type=\"submit\" value=\"Buy Ticket\" />\n" +
                 " </form>";
-        String s="<body><table border = 1>";
+        String s="<body><table style=\"border:1px solid red;>\"";
         for(Flights flight: ticketOffice.searchFlightsByCity(cityName)){
             s+="<tr><td>" + flight.getCity().getCityName() + "</td>" +
                     "<td>"+ flight.getEmptySeat()+ " </td>" +
                     "<td>" + flight.getDepartureDate()+"</td>" +
+                    "<td id=\"Id\">" + flight.getId() + "</td>" +
                     " <td>" + buyBottom +"</td></tr>";
         }
 
