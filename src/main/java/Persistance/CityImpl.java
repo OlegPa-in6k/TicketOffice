@@ -14,7 +14,7 @@ public class CityImpl extends BaseDaoimpl implements CityDAO {
 
 
     public List<City> getAll() {
-        return sessionFactory.getCurrentSession().createQuery("From City").list();
+        return sessionFactory.getCurrentSession().createQuery("From City order by cityName").list();
     }
 
 

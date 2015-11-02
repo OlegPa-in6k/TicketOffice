@@ -17,7 +17,7 @@ public class FlightImpl extends BaseDaoimpl implements FlightDAO {
     @Override
     public List<Flights> getAll() {
 
-        return sessionFactory.getCurrentSession().createQuery("FROM Flights").list();
+        return sessionFactory.getCurrentSession().createQuery("FROM Flights order by departureDate").list();
     }
 
     public Flights getFlightByID(int id){

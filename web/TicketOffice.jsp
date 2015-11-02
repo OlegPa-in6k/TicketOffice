@@ -36,7 +36,7 @@ Select by City:
   <input type="submit"   value="Show" />
  </form>
 
-<br><br>
+<br>
 <form action=/ method=post>
 
    <input type=submit value="Get to start" />

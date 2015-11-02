@@ -30,13 +30,13 @@ public class AddNewFlight extends HttpServlet {
         citySearch =  ctx.getBean(CityImpl.class);
     }
 
-   /* public void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
 
         PrintWriter writer = response.getWriter();
         writer.println("<html>Hello, I am a Java servlet!</html>");
         writer.flush();
-    }*/
+    }
 
     /**
      * handles HTTP POST request
@@ -53,15 +53,13 @@ public class AddNewFlight extends HttpServlet {
 
         ManagerOffice office = new ManagerOffice(flightSearch,citySearch);
         office.setNewFlight(seatCount,cityName,departureDate);
-        /*<form action="indext.jsp" method="post">
-        <input type="submit" value="Get to start" />
-        </form> */
+
 
         PrintWriter writer = response.getWriter();
         writer.println("<html>" + "Flight Was added" + "<body>" +
                 " <form action=/ >\n" +
                 " <input type=\"submit\" value=\"Get to start\" />\n" +
-                " </form> + </body>" +"</html>");
+                " </form></body>" +"</html>");
         writer.flush();
 
     }

@@ -12,7 +12,7 @@
 </head>
 <body style="text-align: center">
 <%--<a href="/QuickServlet">Click here to send GET request</a>
-<a href="/ShowAllFlights">GET Request AllFlights</a>--%>
+<a href="/ShowFlights">GET Request AllFlights</a>--%>
 
 <br/><br/>
 
@@ -33,8 +33,8 @@
 </form>
 
 
-<form action="ShowAllFlights" method="post">
-  <input type="submit" value="ShowAllFlights" />
+<form action="ShowFlights" method="post">
+  <input type="submit" value="ShowFlights" />
 </form>--%>
 
 
