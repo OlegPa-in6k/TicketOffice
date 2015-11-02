@@ -41,16 +41,10 @@ public class AddNewFlight extends HttpServlet {
             throws IOException {
 
         String cityName = request.getParameter("cityName");
-
         String seatCount1 = request.getParameter("seatCount");
         int seatCount = Integer.parseInt(seatCount1);
-
         String departureDate = request.getParameter("departureDate");
-
-
         managerOffice.setNewFlight(seatCount,cityName,departureDate);
-
-
         PrintWriter writer = response.getWriter();
         writer.println("<html>" + "Flight Was added" + "<body>" +
                 " <form action=/ >\n" +
@@ -58,6 +52,5 @@ public class AddNewFlight extends HttpServlet {
                 " </form></body>" +"</html>");
 
         writer.flush();
-
     }
 }
