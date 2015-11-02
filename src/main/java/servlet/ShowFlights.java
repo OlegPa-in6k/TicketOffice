@@ -45,11 +45,12 @@ public class ShowFlights extends HttpServlet {
                 "<td>Departure date</td></tr>";
 
         for (Flights flight : ticketOffice.getAllFlights()) {
-            flightDescription += "<form action=/TicketOffice/BuyTicket method=post>";
+            flightDescription += "<form action=/TicketOffice/BuyTicket method=\"post\">";
             flightDescription += "<tr><td>" + flight.getCity().getCityName() + "</td>";
             flightDescription += "<td>" + flight.getEmptySeat() + "</td>";
             flightDescription += "<td>" + flight.getDepartureDate() + "</td>";
-            flightDescription += "<td>" + "<input type=\"submit\" name=\"Id\"" + "value=\"" + flight.getId() + "\" />" + "</td></tr></form>";
+            flightDescription += "<td>" + "<input type=\"submit\" name=\"Id\"" + "value=\"" + flight.getId() + "\" />"
+            + "</td></tr></form>";
 
 
         }
