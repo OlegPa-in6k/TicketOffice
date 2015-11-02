@@ -39,32 +39,28 @@ public class ShowAllFlights extends HttpServlet {
             throws IOException {
 
 
-        String a = "<body><table>";
+        String a = "<body style=\"text-align: center\"><table border=1>";
 
         for(Flights flight: ticketOffice.getAllFlights()){
             a+="<form action=/TicketOffice/BuyTicket method=post>";
             a+="<tr><td>" + flight.getCity().getCityName() + "</td>";
             a+="<td>" + flight.getEmptySeat() + "</td>";
             a+="<td>" + flight.getDepartureDate() + "</td>";
-            a+="<td>" + "<input type=\"submit\" value=\"BuyTicket\" />" + "</td></tr></form>";
+            a+="<td>" + "<input type=\"submit\" name=\"Id\"" +"value=\""+flight.getId()+"\" />" + "</td></tr></form>";
 
 
         }
-        a+="</table></body>";
 
-        String s="<body><table>";
-        for(Flights flight: ticketOffice.getAllFlights()){
-            s+="<td><td>" + flight.toString() + "</td></tr>";
 
-        }
+
         String bottom =" <form action=/ method=post>\n" +
                 " <input type=\"submit\" value=\"Get to start\" />\n" +
                 " </form>";
 
-        s+=bottom + "</table></body>";
+
 
         PrintWriter writer = response.getWriter();
-        writer.println("<html>" + a + "</html>");
+        writer.println("<html>" + a+bottom + "</table></body>"+"</html>");
         writer.flush();
     }
 
@@ -75,28 +71,25 @@ public class ShowAllFlights extends HttpServlet {
             throws IOException {
 
         String cityName = request.getParameter("cityName");
-        String buyBottom =
 
-                " <form action=/TicketOffice/BuyTicket method=post>\n" +
-                " <input type=\"submit\" value=\"Buy Ticket\" />\n" +
-                " </form>";
-        String s="<body><table style=\"border:1px solid red;>\"";
+        String a="<body style=\"text-align: center\"><table border=1>\"";
         for(Flights flight: ticketOffice.searchFlightsByCity(cityName)){
-            s+="<tr><td>" + flight.getCity().getCityName() + "</td>" +
-                    "<td>"+ flight.getEmptySeat()+ " </td>" +
-                    "<td>" + flight.getDepartureDate()+"</td>" +
-                    "<td id=\"Id\">" + flight.getId() + "</td>" +
-                    " <td>" + buyBottom +"</td></tr>";
+            a+="<form action=/TicketOffice/BuyTicket method=post>";
+            a+="<tr><td>" + flight.getCity().getCityName() + "</td>";
+            a+="<td>" + flight.getEmptySeat() + "</td>";
+            a+="<td>" + flight.getDepartureDate() + "</td>";
+            a+="<td>" + "<input type=\"submit\" name=\"Id\"" +"value=\""+flight.getId()+"\" />" + "</td></tr></form>";
+
         }
 
         String bottom =" <form action=/ method=post>\n" +
                 " <input type=\"submit\" value=\"Get to start\" />\n" +
                 " </form>";
 
-        s+=bottom + "</table></body>";
+        a+=bottom + "</table></body>";
 
         PrintWriter writer = response.getWriter();
-        writer.println("<html>" + s + "</html>");
+        writer.println("<html>" + a + "</html>");
         writer.flush();
 
 

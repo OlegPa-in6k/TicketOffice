@@ -13,7 +13,7 @@
 <head>
     <title>Ticket Office</title>
 </head>
-<body>
+<body style="text-align: center">
 <form action="TicketOffice/ShowAllFlights" method="get">
   <input type="submit" value="ShowAllFlights" />
 </form>

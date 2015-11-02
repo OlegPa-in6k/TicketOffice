@@ -14,7 +14,7 @@
 <head>
     <title></title>
 </head>
-<body>
+<body style="text-align: center">
 
 <form action="ManagerOffice/AddNewFlight" method="post">
   <label>

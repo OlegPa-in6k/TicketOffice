@@ -52,5 +52,13 @@ public class TicketOffice {
         return answer;
     }
 
+    public void setSeat(int id, int seat){
+        Flights flight = implFlight.getFlightByID(id);
+        if(seat<=flight.getEmptySeat()){
+            flight.setEmptySeat(flight.getEmptySeat()-seat);
+        }
+        implFlight.update(flight);
+    }
+
 
 }

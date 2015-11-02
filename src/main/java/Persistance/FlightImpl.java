@@ -20,6 +20,10 @@ public class FlightImpl extends BaseDaoimpl implements FlightDAO {
         return sessionFactory.getCurrentSession().createQuery("FROM Flights").list();
     }
 
+    public Flights getFlightByID(int id){
+        return (Flights) sessionFactory.getCurrentSession().createQuery("From Flights Where id ='" + id + "'").list().get(0);
+    }
+
 
     public List<Flights> getFlightsByCity(int id_city) {
         return sessionFactory.getCurrentSession().createQuery(

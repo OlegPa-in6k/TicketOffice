@@ -1,8 +1,10 @@
 package servlet;
 
 import AirManager.ManagerOffice;
+import Entity.Flights;
 import Persistance.CityImpl;
 import Persistance.FlightImpl;
+import TicketOffice.TicketOffice;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -20,21 +22,36 @@ public class BuyTicket extends HttpServlet {
 
     FlightImpl flightSearch;
     CityImpl citySearch;
+    TicketOffice ticketOffice;
 
     @Override
     public void init() throws ServletException {
         WebApplicationContext ctx = WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
-        flightSearch =  ctx.getBean(FlightImpl.class);
-        citySearch =  ctx.getBean(CityImpl.class);
+        flightSearch = ctx.getBean(FlightImpl.class);
+        citySearch = ctx.getBean(CityImpl.class);
+        ticketOffice = ctx.getBean(TicketOffice.class);
     }
 
-   /* public void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
+        String emptyseats = request.getParameter("seatCount");
+        int seatCount = Integer.parseInt(emptyseats);
+
+        String flightId = request.getParameter("Id");
+        int id = Integer.parseInt(flightId);
+        Flights flights=flightSearch.getFlightByID(id);
+        String a;
+        if(flights.getEmptySeat()>=seatCount){
+            ticketOffice.setSeat(id,seatCount);
+            a="U succsesfully buy tickets";
+        } else{
+            a = "Oops, NO such count of tickets";
+        }
 
         PrintWriter writer = response.getWriter();
-        writer.println("<html>Hello, I am a Java servlet!</html>");
+        writer.println("<html>"+a+"</html>");
         writer.flush();
-    }*/
+    }
 
     /**
      * handles HTTP POST request
@@ -42,21 +59,22 @@ public class BuyTicket extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
 
-        /*String cityName = request.getParameter("cityName");
+        String flightId = request.getParameter("Id");
+        int id = Integer.parseInt(flightId);
+        Flights flight = flightSearch.getFlightByID(id);
+        String flightDescription = "<body><form ><table>" +
+                "<tr><td>" + flight.getCity().getCityName() + "</td>" +
+                "<td>" + flight.getEmptySeat() + "</td>" +
+                "<td>" + flight.getDepartureDate() + "</td>" +
+                "<td>" + "<label>\n" +
+                "CounterOfSeats:\n" +
+                "<input type=\"text\" size=\"5\" name=\"seatCount\"/>\n" +
+                "</label>" + "</td>" +
+                "<td>" + "<input type=\"submit\" name=\"Id\"  value=\""+flight.getId()+"\" />" + "</td></tr></table></form>";
 
-        String seatCount1 = request.getParameter("seatCount");
-        int seatCount = Integer.parseInt(seatCount1);
 
-        String departureDate = request.getParameter("departureDate");
-
-        ManagerOffice office = new ManagerOffice(flightSearch,citySearch);
-        office.setNewFlight(seatCount,cityName,departureDate);
-        *//*<form action="indext.jsp" method="post">
-        <input type="submit" value="Get to start" />
-        </form> *//*
-*/
         PrintWriter writer = response.getWriter();
-        writer.println("<html>" + 123+"</html>");
+        writer.println("<html>" + flightDescription + "</html>");
         writer.flush();
 
     }
