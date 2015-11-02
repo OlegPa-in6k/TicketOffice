@@ -9,6 +9,7 @@
 <html>
 <head>
   <title>Ticket Office</title>
+  <link rel="stylesheet" type="text/css" href="Style/Style.css">
 </head>
 <body style="text-align: center">
 <%--<a href="/QuickServlet">Click here to send GET request</a>
@@ -23,7 +24,6 @@
 <form action="TicketOffice.jsp" method="post">
   <input type="submit" value="TicketOffice" />
 </form>
-
 <%--<form action="QuickServlet" method="post">
   Width: <input type="text" size="5" name="width"/>
   &nbsp;&nbsp;
@@ -31,14 +31,8 @@
   &nbsp;&nbsp;
   <input type="submit" value="Calculate" />
 </form>
-
-
 <form action="ShowFlights" method="post">
   <input type="submit" value="ShowFlights" />
 </form>--%>
-
-
-
-
 </body>
 </html>

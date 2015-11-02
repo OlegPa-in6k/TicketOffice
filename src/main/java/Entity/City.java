@@ -1,8 +1,6 @@
 package Entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Oleg on 27.10.2015.
@@ -15,7 +13,7 @@ public class City {
     @Id
     @GeneratedValue
     @Column(name = "id_city")
-    private int id_city;
+    private int cityId;
 
 
     @Column(name = "cityName")
@@ -25,17 +23,17 @@ public class City {
     public City() {}
 
     public City(int id, String cityName) {
-        this.id_city = id;
+        this.cityId = id;
         this.cityName = cityName;
     }
 
 
     public int getCityId() {
-        return id_city;
+        return cityId;
     }
 
-    public void setId_city(int id_city) {
-        this.id_city = id_city;
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
     }
 
     public String getCityName() {

@@ -4,6 +4,8 @@ import Core.BaseDaoimpl;
 import Core.CityDAO;
 
 import Entity.City;
+import org.hibernate.Query;
+
 
 import java.util.List;
 
@@ -14,18 +16,22 @@ public class CityImpl extends BaseDaoimpl implements CityDAO {
 
 
     public List<City> getAll() {
-        return sessionFactory.getCurrentSession().createQuery("From City order by cityName").list();
+        return startSession().createQuery("From City order by cityName").list();
     }
 
 
     public City getCityNameById(int id) {
+        Query query = startSession().createQuery("From City WHERE id_city=:id");
+        query.setParameter("id",id);
 
-        return (City) sessionFactory.getCurrentSession().createQuery("From City WHERE id_city='" + id + "'").list().get(0);
+        return (City) query.uniqueResult();
     }
 
 
     public City getCityIdByName(String cityName) {
-        return (City) sessionFactory.getCurrentSession().createQuery("From City Where cityName Like '" + cityName + "'").list().get(0);
+        Query query = startSession().createQuery("From City Where cityName Like :cityName");
+        query.setParameter("cityName", cityName);
+        return (City) query.uniqueResult();
     }
 
 

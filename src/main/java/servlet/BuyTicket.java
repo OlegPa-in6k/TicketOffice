@@ -48,8 +48,12 @@ public class BuyTicket extends HttpServlet {
             a = "Oops, NO such count of tickets";
         }
 
+        String bottom = "<form action=/ method=post>" +
+                "<input type=\"submit\" value=\"Get to start\" />" +
+                "</form>";
+
         PrintWriter writer = response.getWriter();
-        writer.println("<html>"+a+"</html>");
+        writer.println("<html>"+a+bottom+"</html>");
         writer.flush();
     }
 

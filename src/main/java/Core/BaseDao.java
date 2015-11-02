@@ -13,7 +13,7 @@ public interface BaseDao<T> {
 
     void delete(T entity);
 
-    List getAll();
+    List<T> getAll();
 
 
 }

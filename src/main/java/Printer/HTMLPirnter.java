@@ -17,7 +17,7 @@ import java.util.List;
 public class HTMLPirnter {
 
 
-    public String printFlight(List<Flights> list){
+    public String printFlight(List<Flights> list, String bottom){
         String html="<table border =1>";
         html+="<tr><td>DepartureCity</td>"+
                 "<td>Empty Seats</td>"+
@@ -25,7 +25,8 @@ public class HTMLPirnter {
         for(Flights flight: list){
             html+="<tr><td>" + flight.getCity().getCityName()+"</td>"+
                     "<td>" + flight.getEmptySeat() + "</td>"+
-                    "<td>" + flight.getDepartureDate() + "</td>";
+                    "<td>" + flight.getDepartureDate() + "</td>" +
+                    bottom;
         }
         return html;
     }

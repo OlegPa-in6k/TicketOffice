@@ -79,19 +79,17 @@ public class InputController implements InputControllerInterface {
 
     public void ticketOfficeSettings(){
 
-
         printer.printStartMassage();
 
         switch (scanner.nextInt()){
             case 1: printer.printTable(ticketOffice.getAllFlights());
-
                 break;
             case 2:
                 printFlightByCity();
                 break;
             case 3: printer.printDate();
                 printFlightByDate();
-            case 4: printer.printAboutCity();
+            case 4:
                 getAnswerByFlightAndSeat();
                 break;
             case 0: break;
@@ -103,6 +101,8 @@ public class InputController implements InputControllerInterface {
     }
 
     private void getAnswerByFlightAndSeat() {
+        printer.printAboutCity();
+        scanner.nextLine();
         String arrivalCity1 = scanner.nextLine();
         printer.printDate();
         String departuredate1 = scanner.nextLine();
@@ -120,6 +120,7 @@ public class InputController implements InputControllerInterface {
 
     private void printFlightByCity() {
         printer.printAboutCity();
+        scanner.nextLine();
         String arrivalCity = scanner.nextLine();
         printer.printTable(ticketOffice.searchFlightsByCity(arrivalCity));
     }

@@ -13,6 +13,7 @@
 <html>
 <head>
     <title></title>
+    <link rel="stylesheet" type="text/css" href="Style/Style.css">
 </head>
 <body style="text-align: center">
 

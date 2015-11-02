@@ -18,7 +18,6 @@ public class Flights {
     @Id
     @GeneratedValue
     private int id;
-
     @Column(name = "EmptySeat")
     private int emptySeat;
     @Column(name = "departureDate")

@@ -1,5 +1,6 @@
 package Core;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,24 +14,28 @@ import java.util.List;
  */
 
 @Transactional
-public abstract class BaseDaoimpl implements BaseDao {
+public abstract class BaseDaoimpl<T> implements BaseDao<T> {
 
 
 
     @Autowired
     protected SessionFactory sessionFactory;
 
-    public abstract List getAll();
+    public Session startSession(){
+        return sessionFactory.getCurrentSession();
+    }
 
-    public void save(Object object){
+    public abstract List<T> getAll();
+
+    public void save(T object){
         sessionFactory.getCurrentSession().save(object);
     }
 
-    public void delete(Object object){
+    public void delete(T object){
         sessionFactory.getCurrentSession().delete(object);
     }
 
-    public void update(Object object){
+    public void update(T object){
         sessionFactory.getCurrentSession().saveOrUpdate(object);
     }
 

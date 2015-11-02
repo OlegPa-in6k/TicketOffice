@@ -12,6 +12,7 @@
 <html>
 <head>
     <title>Ticket Office</title>
+    <link rel="stylesheet" type="text/css" href="Style/Style.css">
 </head>
 <body style="text-align: center">
 <form action="TicketOffice/ShowAllFlights" method="get">

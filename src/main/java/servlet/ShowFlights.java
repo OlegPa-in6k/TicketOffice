@@ -49,10 +49,8 @@ public class ShowFlights extends HttpServlet {
             flightDescription += "<tr><td>" + flight.getCity().getCityName() + "</td>";
             flightDescription += "<td>" + flight.getEmptySeat() + "</td>";
             flightDescription += "<td>" + flight.getDepartureDate() + "</td>";
-            flightDescription += "<td>" + "<input type=\"submit\" name=\"Id\"" + "value=\"" + flight.getId() + "\" />"
+            flightDescription += "<td>" + "<input type=\"submit\" name=\"Id\"" + "value=\"" + flight.getId() + "\" /"+"buy"+"</input>"
             + "</td></tr></form>";
-
-
         }
 
 
@@ -101,11 +99,5 @@ public class ShowFlights extends HttpServlet {
 
     }
 
-   /* *//**
-     * this life-cycle method is invoked when the application or the server
-     * is shutting down
-     *//*
-    public void destroy() {
-        System.out.println("Servlet is being destroyed");
-    }*/
+
 }

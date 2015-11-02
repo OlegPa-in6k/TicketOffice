@@ -3,6 +3,7 @@ package Persistance;
 import Core.BaseDaoimpl;
 import Core.FlightDAO;
 import Entity.Flights;
+import org.hibernate.Query;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -17,31 +18,39 @@ public class FlightImpl extends BaseDaoimpl implements FlightDAO {
     @Override
     public List<Flights> getAll() {
 
-        return sessionFactory.getCurrentSession().createQuery("FROM Flights order by departureDate").list();
+        return startSession().createQuery("FROM Flights order by departureDate").list();
     }
 
     public Flights getFlightByID(int id){
-        return (Flights) sessionFactory.getCurrentSession().createQuery("From Flights Where id ='" + id + "'").list().get(0);
+        Query query = startSession().createQuery("From Flights Where id = :id");
+        query.setParameter("id", id);
+        return (Flights) query.uniqueResult();
+
     }
 
+    @SuppressWarnings("Uncheked")
+    public List<Flights> getFlightsByCity(int idCity) {
+        Query query = startSession().createQuery("FROM Flights WHERE  id_city = :idCity");
+        query.setParameter("idCity", idCity);
 
-    public List<Flights> getFlightsByCity(int id_city) {
-        return sessionFactory.getCurrentSession().createQuery(
-                "FROM Flights WHERE  id_city ='" + id_city + "'").list();
+        return query.list();
     }
 
 
     public List<Flights> getFlightByDate(Timestamp date) {
-        return sessionFactory.getCurrentSession().createQuery(
-                "FROM Flights WHERE departureDate ='" + date + "'").list();
+        Query query = startSession().createQuery("FROM Flights WHERE departureDate = :date");
+        query.setParameter("date", date);
+        return query.list();
     }
 
 
-    public Flights getFlight(int id_city, Timestamp date) {
+    public Flights getFlight(int idCity, Timestamp date) {
+        Query query = startSession().createQuery("FROM Flights WHERE " +
+                "id_city = :idCity  AND departureDate = :date");
+        query.setParameter("idCity", idCity);
+        query.setParameter("date", date);
 
-
-        return (Flights) sessionFactory.getCurrentSession().createQuery("FROM Flights WHERE " +
-                "id_city = '" + id_city + "' AND departureDate = '" + date + "'").list().get(0);
+        return (Flights) query.uniqueResult();
     }
 
 
