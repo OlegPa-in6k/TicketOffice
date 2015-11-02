@@ -1,43 +1,34 @@
 package Printer;
 
+import AirManager.ManagerOffice;
 import Entity.Flights;
 import Persistance.FlightImpl;
+import TicketOffice.TicketOffice;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 /**
  * Created by employee on 10/29/15.
  */
 public class HTMLPirnter {
-    HttpServletResponse response;
-    PrintWriter printer;
-
-    public HTMLPirnter(HttpServletResponse response) throws IOException {
-        this.response = response;
-        this.printer = response.getWriter();
-    }
-
-    public void showAllFlights() throws IOException {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                new String[]{"applicationContext.xml"}, true);
 
 
-        FlightImpl flightSearch =  context.getBean(FlightImpl.class);
-
-        String s="<body><table>";
-        for(Flights flight: flightSearch.getAll()){
-            s+="<tr><td>" + flight.toString() + "</td></tr>";
-
+    public String printFlight(List<Flights> list){
+        String html="<table border =1>";
+        html+="<tr><td>DepartureCity</td>"+
+                "<td>Empty Seats</td>"+
+                "<td>Departure date</td></tr>";
+        for(Flights flight: list){
+            html+="<tr><td>" + flight.getCity().getCityName()+"</td>"+
+                    "<td>" + flight.getEmptySeat() + "</td>"+
+                    "<td>" + flight.getDepartureDate() + "</td>";
         }
-        s+="</table></body>";
-
-
-
-
-        printer.println("<html>" + s +"</html>");
-        printer.flush();
+        return html;
     }
+
+
 }

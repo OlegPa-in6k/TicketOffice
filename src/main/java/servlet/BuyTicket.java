@@ -62,7 +62,11 @@ public class BuyTicket extends HttpServlet {
         String flightId = request.getParameter("Id");
         int id = Integer.parseInt(flightId);
         Flights flight = flightSearch.getFlightByID(id);
-        String flightDescription = "<body><form ><table>" +
+
+        String flightDescription = "<body><form ><table border =1>" +
+                "<tr><td>DepartureCity</td>"+
+                "<td>Empty Seats</td>"+
+                "<td>Departure date</td></tr>"+
                 "<tr><td>" + flight.getCity().getCityName() + "</td>" +
                 "<td>" + flight.getEmptySeat() + "</td>" +
                 "<td>" + flight.getDepartureDate() + "</td>" +

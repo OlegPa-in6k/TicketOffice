@@ -40,6 +40,9 @@ public class DeleteFlight extends HttpServlet {
         flightSearch.delete(flightSearch.getFlightByID(Integer.parseInt(flightId)));
 
         String flightDescription = "<body style=\"text-align: center\"><table border=1>";
+        flightDescription+="<tr><td>DepartureCity</td>"+
+                "<td>Empty Seats</td>"+
+                "<td>Departure date</td></tr>";
 
         for (Flights flight : ticketOffice.getAllFlights()) {
             flightDescription += "<form action=/ManagerOffice/DeleteFlight method=get>";

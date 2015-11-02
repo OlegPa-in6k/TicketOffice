@@ -40,6 +40,9 @@ public class ShowFlights extends HttpServlet {
 
 
         String flightDescription = "<body style=\"text-align: center\"><table border=1>";
+        flightDescription+="<tr><td>DepartureCity</td>"+
+                "<td>Empty Seats</td>"+
+                "<td>Departure date</td></tr>";
 
         for (Flights flight : ticketOffice.getAllFlights()) {
             flightDescription += "<form action=/TicketOffice/BuyTicket method=post>";
@@ -52,7 +55,7 @@ public class ShowFlights extends HttpServlet {
         }
 
 
-        String bottom = " <form action=/ method=post>\n" +
+        String bottom = "<form action=/ method=post>\n" +
                 " <input type=\"submit\" value=\"Get to start\" />\n" +
                 " </form>";
 
@@ -70,14 +73,17 @@ public class ShowFlights extends HttpServlet {
 
         String cityName = request.getParameter("cityName");
 
-        String flightDescription = "<body style=\"text-align: center\"><table border=1>\"";
+        String flightDescription = "<body style=\"text-align: center\"><table border=1>";
+        flightDescription+="<tr><td>DepartureCity</td>"+
+                "<td>Empty Seats</td>"+
+                "<td>Departure date</td></tr>";
         for (Flights flight : ticketOffice.searchFlightsByCity(cityName)) {
             flightDescription += "<form action=/TicketOffice/BuyTicket method=post>";
             flightDescription += "<tr><td>" + flight.getCity().getCityName() + "</td>";
             flightDescription += "<td>" + flight.getEmptySeat() + "</td>";
             flightDescription += "<td>" + flight.getDepartureDate() + "</td>";
             flightDescription += "<td>" + "<input type=\"submit\" name=\"Id\"" +
-                    "value=\"" + flight.getId() + "\" />" + "</td></tr></form>";
+            "value=\"" + flight.getId() + "\" />" + "</td></tr></form>";
 
         }
 
