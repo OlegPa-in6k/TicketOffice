@@ -1,11 +1,8 @@
-package InputController;
+package Core.InputOutput.InputController;
 
-import Entity.Flights;
-import Persistance.FlightImpl;
-import Printer.PrinterImpl;
+import Persistance.FlightDaoImpl;
+import Core.InputOutput.Printer.PrinterImpl;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.Scanner;
 
 /**
@@ -14,10 +11,10 @@ import java.util.Scanner;
 public class InputControllerImpl {
 
         Scanner scanner = new Scanner(System.in);
-        FlightImpl search;
+        FlightDaoImpl search;
         PrinterImpl printer;
 
-    public InputControllerImpl(FlightImpl search, PrinterImpl printer) {
+    public InputControllerImpl(FlightDaoImpl search, PrinterImpl printer) {
         this.search = search;
         this.printer = printer;
     }

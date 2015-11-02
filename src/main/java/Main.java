@@ -1,9 +1,7 @@
-import Entity.City;
-import Entity.Flights;
-import InputController.InputController;
-import InputController.InputControllerDAOImpl;
-import Persistance.CityImpl;
-import Persistance.FlightImpl;
+import Core.Dao.CityDao;
+import Core.Entity.City;
+import Core.InputOutput.InputController.InputController;
+import Persistance.CityDaoImpl;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
@@ -20,12 +18,10 @@ public class Main {
 
 
         InputController controller =  context.getBean(InputController.class);
+
         controller.startChoose();
 
-        CityImpl city = context.getBean(CityImpl.class);
-        for(City cc: city.getAll()){
-            System.out.println(cc.getCityId() + " " + cc.getCityName());
-        }
+
 
     }
 

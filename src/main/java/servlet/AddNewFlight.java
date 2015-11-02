@@ -1,9 +1,7 @@
 package servlet;
 
-import AirManager.ManagerOffice;
-import Entity.Flights;
-import Persistance.CityImpl;
-import Persistance.FlightImpl;
+import service.AirManager.ManagerOffice;
+
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -20,23 +18,21 @@ import java.io.PrintWriter;
 public class AddNewFlight extends HttpServlet {
 
 
-    FlightImpl flightSearch;
-    CityImpl citySearch;
+    ManagerOffice managerOffice;
 
     @Override
     public void init() throws ServletException {
         WebApplicationContext ctx = WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
-        flightSearch =  ctx.getBean(FlightImpl.class);
-        citySearch =  ctx.getBean(CityImpl.class);
+        managerOffice = ctx.getBean(ManagerOffice.class);
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    /*public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
 
         PrintWriter writer = response.getWriter();
         writer.println("<html>Hello, I am a Java servlet!</html>");
         writer.flush();
-    }
+    }*/
 
     /**
      * handles HTTP POST request
@@ -51,8 +47,8 @@ public class AddNewFlight extends HttpServlet {
 
         String departureDate = request.getParameter("departureDate");
 
-        ManagerOffice office = new ManagerOffice(flightSearch,citySearch);
-        office.setNewFlight(seatCount,cityName,departureDate);
+
+        managerOffice.setNewFlight(seatCount,cityName,departureDate);
 
 
         PrintWriter writer = response.getWriter();
@@ -60,6 +56,7 @@ public class AddNewFlight extends HttpServlet {
                 " <form action=/ >\n" +
                 " <input type=\"submit\" value=\"Get to start\" />\n" +
                 " </form></body>" +"</html>");
+
         writer.flush();
 
     }

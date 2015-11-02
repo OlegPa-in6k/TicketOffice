@@ -1,9 +1,9 @@
-package InputController;
+package Core.InputOutput.InputController;
 
-import Entity.Flights;
-import Persistance.CityImpl;
-import Persistance.FlightImpl;
-import Printer.PrinterImpl;
+import Core.Entity.Flights;
+import Core.InputOutput.Printer.PrinterImpl;
+import Persistance.CityDaoImpl;
+import Persistance.FlightDaoImpl;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -15,15 +15,15 @@ import java.util.Scanner;
 public class InputControllerDAOImpl implements InputControllerInterface {
     Scanner scanner = new Scanner(System.in);
 
-    public InputControllerDAOImpl(PrinterImpl printer, FlightImpl searchFlight, CityImpl searchCity) {
+    public InputControllerDAOImpl(PrinterImpl printer, FlightDaoImpl searchFlight, CityDaoImpl searchCity) {
         this.printer = printer;
         this.searchFlight = searchFlight;
         this.searchCity = searchCity;
     }
 
     PrinterImpl printer;
-    FlightImpl searchFlight;
-    CityImpl searchCity;
+    FlightDaoImpl searchFlight;
+    CityDaoImpl searchCity;
 
     public void startChoise() {
         boolean isExit = false;

@@ -1,4 +1,4 @@
-package StreamFactory;
+package Core.InputOutput.StreamFactory;
 
 import java.io.InputStream;
 import java.io.PrintStream;

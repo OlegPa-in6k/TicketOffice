@@ -1,6 +1,6 @@
-package Printer;
+package Core.InputOutput.Printer;
 
-import Entity.Flights;
+import Core.Entity.Flights;
 
 import java.util.List;
 

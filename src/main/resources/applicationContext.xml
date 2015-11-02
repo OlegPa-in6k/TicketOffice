@@ -37,7 +37,7 @@
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="Entity"/>
+        <property name="packagesToScan" value="Core.Entity"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="show_sql">true</prop>
@@ -56,34 +56,37 @@
 
     <tx:annotation-driven proxy-target-class="true" transaction-manager="transactionManager"/>
 
-    <bean id="daoFlight" class="Persistance.FlightImpl"/>
+    <bean id="daoFlight" class="Persistance.FlightDaoImpl"/>
 
 
-    <bean id="daoCity" class="Persistance.CityImpl"/>
+    <bean id="daoCity" class="Persistance.CityDaoImpl"/>
 
-    <bean id="InputControllerDAOImpl" class="InputController.InputControllerDAOImpl">
+    <bean id="InputControllerDAOImpl" class="Core.InputOutput.InputController.InputControllerDAOImpl">
         <constructor-arg ref="PrinterImpl"/>
         <constructor-arg ref="daoFlight"/>
         <constructor-arg ref="daoCity"/>
 
     </bean>
-    <bean id="PrinterImpl" class="Printer.PrinterImpl">   </bean>
+    <bean id="PrinterImpl" class="Core.InputOutput.Printer.PrinterImpl">   </bean>
 
-    <bean id="InputController" class="InputController.InputController">
+    <bean id="InputController" class="Core.InputOutput.InputController.InputController">
         <constructor-arg ref="officeManager"/>
         <constructor-arg ref="officeTicket"/>
         <constructor-arg ref="PrinterImpl"/>
     </bean>
-    <bean id="officeManager" class="AirManager.ManagerOffice">
+    <bean id="officeManager" class="service.AirManager.ManagerOffice">
         <constructor-arg ref="daoFlight"/>
         <constructor-arg ref="daoCity"/>
 
     </bean>
-    <bean id="officeTicket" class="TicketOffice.TicketOffice">
+    <bean id="officeTicket" class="service.TicketOffice.TicketOffice">
         <constructor-arg ref="daoCity"/>
         <constructor-arg ref="daoFlight"/>
 
     </bean>
+    <bean id="htmlPrinter" class="Core.InputOutput.Printer.HTMLPirnter"/>
+  <bean id="baseDao" class="Persistance.BaseDaoImpl" abstract="true"/>
+
 
 
 

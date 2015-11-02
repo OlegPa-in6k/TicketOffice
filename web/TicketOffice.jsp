@@ -1,5 +1,5 @@
-<%@ page import="Entity.City" %>
-<%@ page import="Persistance.CityImpl" %>
+<%@ page import="Core.Entity.City" %>
+<%@ page import="Persistance.CityDaoImpl" %>
 <%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
 <%--
   Created by IntelliJ IDEA.
@@ -29,7 +29,7 @@ Select by City:
                 ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                         new String[]{"applicationContext.xml"}, true);
             %>
-            <% CityImpl search = (CityImpl) context.getBean("daoCity");%>
+            <% CityDaoImpl search = (CityDaoImpl) context.getBean("daoCity");%>
             <%for (City city : search.getAll()) { %>
             <option value=<%=city.getCityName()%>><%=city.getCityName()%>
             </option>

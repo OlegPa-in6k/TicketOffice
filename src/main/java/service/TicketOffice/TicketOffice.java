@@ -1,9 +1,9 @@
-package TicketOffice;
+package service.TicketOffice;
 
-import Entity.Flights;
-import Persistance.CityImpl;
-import Persistance.FlightImpl;
-import Printer.PrinterImpl;
+import Core.Entity.Flights;
+import Persistance.CityDaoImpl;
+import Persistance.FlightDaoImpl;
+import Core.InputOutput.Printer.PrinterImpl;
 import org.hibernate.exception.SQLGrammarException;
 
 import java.sql.Timestamp;
@@ -14,11 +14,11 @@ import java.util.List;
  * Created by employee on 10/29/15.
  */
 public class TicketOffice {
-    public FlightImpl flightSearch;
-    public CityImpl citySearch;
+    public FlightDaoImpl flightSearch;
+    public CityDaoImpl citySearch;
     PrinterImpl printer;
 
-    public TicketOffice(CityImpl citySearch, FlightImpl flightSearch) {
+    public TicketOffice(CityDaoImpl citySearch, FlightDaoImpl flightSearch) {
         this.citySearch = citySearch;
         this.flightSearch = flightSearch;
 
@@ -54,7 +54,7 @@ public class TicketOffice {
     }
 
     public void setSeat(int id, int seat){
-        Flights flight = flightSearch.getFlightByID(id);
+        Flights flight = (Flights) flightSearch.read(id);
         if(seat<=flight.getEmptySeat()){
             flight.setEmptySeat(flight.getEmptySeat()-seat);
         }

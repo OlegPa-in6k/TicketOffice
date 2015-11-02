@@ -1,8 +1,7 @@
 package Persistance;
 
-import Core.BaseDaoimpl;
-import Core.FlightDAO;
-import Entity.Flights;
+import Core.Dao.FlightDAO;
+import Core.Entity.Flights;
 import org.hibernate.Query;
 
 import java.sql.Timestamp;
@@ -12,26 +11,18 @@ import java.util.List;
 /**
  * Created by employee on 10/26/15.
  */
-public class FlightImpl extends BaseDaoimpl implements FlightDAO {
+public class FlightDaoImpl extends BaseDaoImpl<Flights> implements FlightDAO {
 
-
-    @Override
-    public List<Flights> getAll() {
-
-        return startSession().createQuery("FROM Flights order by departureDate").list();
+    public FlightDaoImpl() {
+        super();
     }
 
-    public Flights getFlightByID(int id){
-        Query query = startSession().createQuery("From Flights Where id = :id");
-        query.setParameter("id", id);
-        return (Flights) query.uniqueResult();
-
-    }
 
     @SuppressWarnings("Uncheked")
-    public List<Flights> getFlightsByCity(int idCity) {
+
+    public List<Flights> getFlightsByCity(int cityId) {
         Query query = startSession().createQuery("FROM Flights WHERE  id_city = :idCity");
-        query.setParameter("idCity", idCity);
+        query.setParameter("idCity", cityId);
 
         return query.list();
     }
@@ -44,15 +35,14 @@ public class FlightImpl extends BaseDaoimpl implements FlightDAO {
     }
 
 
-    public Flights getFlight(int idCity, Timestamp date) {
+    public Flights getFlight(int cityId, Timestamp date) {
         Query query = startSession().createQuery("FROM Flights WHERE " +
                 "id_city = :idCity  AND departureDate = :date");
-        query.setParameter("idCity", idCity);
+        query.setParameter("idCity", cityId);
         query.setParameter("date", date);
 
         return (Flights) query.uniqueResult();
     }
-
 
 
 }

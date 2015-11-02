@@ -1,9 +1,9 @@
-package InputController;
+package Core.InputOutput.InputController;
 
-import AirManager.ManagerOffice;
+import service.AirManager.ManagerOffice;
 
-import Printer.PrinterImpl;
-import TicketOffice.TicketOffice;
+import Core.InputOutput.Printer.PrinterImpl;
+import service.TicketOffice.TicketOffice;
 
 import java.util.Scanner;
 
@@ -49,7 +49,7 @@ public class InputController implements InputControllerInterface {
                     addFlight();
                     break;
                 case 2:
-                    deleteFlight();
+                    //deleteFlight();
                     break;
                 case 0: isExit = true;
                     break;
@@ -57,14 +57,14 @@ public class InputController implements InputControllerInterface {
         }
     }
 
-    private void deleteFlight() {
+    /*private void deleteFlight() {
         scanner.nextLine();
         printer.printDate();
         String departureDate1 = scanner.nextLine();
         printer.printAboutCity();
         String arrivalCity1 = scanner.nextLine();
-        officeManager.deleteFlight(arrivalCity1, departureDate1);
-    }
+        officeManager.deleteFlight(id);
+    }*/
 
     private void addFlight() {
         scanner.nextLine();

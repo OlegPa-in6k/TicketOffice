@@ -12,6 +12,7 @@
   <link rel="stylesheet" type="text/css" href="Style/Style.css">
 </head>
 <body style="text-align: center">
+
 <form action="AddNewFlight.jsp" method="post">
   <input type="submit" value="AddNewFlight" />
 </form>

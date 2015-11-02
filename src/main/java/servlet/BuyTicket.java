@@ -1,10 +1,9 @@
 package servlet;
 
-import AirManager.ManagerOffice;
-import Entity.Flights;
-import Persistance.CityImpl;
-import Persistance.FlightImpl;
-import TicketOffice.TicketOffice;
+import Core.Entity.Flights;
+import Persistance.CityDaoImpl;
+import Persistance.FlightDaoImpl;
+import service.TicketOffice.TicketOffice;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -20,15 +19,15 @@ import java.io.PrintWriter;
  */
 public class BuyTicket extends HttpServlet {
 
-    FlightImpl flightSearch;
-    CityImpl citySearch;
+    FlightDaoImpl flightSearch;
+    CityDaoImpl citySearch;
     TicketOffice ticketOffice;
 
     @Override
     public void init() throws ServletException {
         WebApplicationContext ctx = WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
-        flightSearch = ctx.getBean(FlightImpl.class);
-        citySearch = ctx.getBean(CityImpl.class);
+        flightSearch = ctx.getBean(FlightDaoImpl.class);
+        citySearch = ctx.getBean(CityDaoImpl.class);
         ticketOffice = ctx.getBean(TicketOffice.class);
     }
 
@@ -39,7 +38,7 @@ public class BuyTicket extends HttpServlet {
 
         String flightId = request.getParameter("Id");
         int id = Integer.parseInt(flightId);
-        Flights flights=flightSearch.getFlightByID(id);
+        Flights flights= (Flights) flightSearch.read(id);
         String a;
         if(flights.getEmptySeat()>=seatCount){
             ticketOffice.setSeat(id,seatCount);
@@ -65,7 +64,7 @@ public class BuyTicket extends HttpServlet {
 
         String flightId = request.getParameter("Id");
         int id = Integer.parseInt(flightId);
-        Flights flight = flightSearch.getFlightByID(id);
+        Flights flight = (Flights) flightSearch.read(id);
 
         String flightDescription = "<body><form ><table border =1>" +
                 "<tr><td>DepartureCity</td>"+
@@ -78,7 +77,8 @@ public class BuyTicket extends HttpServlet {
                 "CounterOfSeats:\n" +
                 "<input type=\"text\" size=\"5\" name=\"seatCount\"/>\n" +
                 "</label>" + "</td>" +
-                "<td>" + "<input type=\"submit\" name=\"Id\"  value=\""+flight.getId()+"\" />" + "</td></tr></table></form>";
+                "<td>" + "<input type=\"submit\" name=\"Id\"  value=\""+flight.getId()+"\" />" +
+                "</td></tr></table></form>";
 
 
         PrintWriter writer = response.getWriter();
