@@ -15,7 +15,7 @@
 
 <br/><br/>
 
-<form action="views/ManagerOffice.jsp" method="post">
+<form action="/ManagerOffice" method="get">
   <input type="submit" value="ManagerOffice" />
 </form>
 

@@ -18,7 +18,7 @@
 </form>
 <br><br>
 
-<form action="ManagerOffice/DeleteFlight" method="post">
+<form action="/DeleteFlight" method="post">
   <input type="submit" value="DeleteFlight" />
 </form>
 <br><br>
