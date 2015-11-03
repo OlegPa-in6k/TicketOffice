@@ -16,7 +16,7 @@
 </head>
 <body style="text-align: center">
 
-<form action="ManagerOffice/AddNewFlight" method="post">
+<form action="/AddNewFlight" method="post">
   <label>
     <select name="cityName">
       <%

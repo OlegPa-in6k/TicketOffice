@@ -13,7 +13,7 @@
 </head>
 <body style="text-align: center">
 
-<form action="AddNewFlight.jsp" method="post">
+<form action="/AddNewFlight" method="get">
   <input type="submit" value="AddNewFlight" />
 </form>
 <br><br>

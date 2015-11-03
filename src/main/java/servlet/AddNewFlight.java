@@ -6,6 +6,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,25 +16,16 @@ import java.io.PrintWriter;
 /**
  * Created by employee on 10/30/15.
  */
-public class AddNewFlight extends HttpServlet {
-
-
-    ManagerOffice managerOffice;
+@WebServlet(urlPatterns = "/AddNewFlight")
+public class AddNewFlight  extends BaseServlet {
 
     @Override
-    public void init() throws ServletException {
-        WebApplicationContext ctx = WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
-        managerOffice = ctx.getBean(ManagerOffice.class);
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+
+        req.setAttribute("city", citySearch.getAll());
+        req.getRequestDispatcher("views/AddNewFlight.jsp").forward(req,resp);
     }
-
-    /*public void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws IOException {
-
-        PrintWriter writer = response.getWriter();
-        writer.println("<html>Hello, I am a Java servlet!</html>");
-        writer.flush();
-    }*/
-
     /**
      * handles HTTP POST request
      */
