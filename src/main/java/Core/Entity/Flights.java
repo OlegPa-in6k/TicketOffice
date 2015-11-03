@@ -84,6 +84,9 @@ public class Flights {
         return getCity().getCityName() + " " + getEmptySeat() + " " + getDepartureDate();
 
     }
+    public boolean hasSeats(int seat){
+        return getEmptySeat()>=seat;
+    }
 
 
 

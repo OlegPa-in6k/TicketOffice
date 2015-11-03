@@ -16,12 +16,8 @@
     <link rel="stylesheet" type="text/css" href="../Style/Style.css">
 </head>
 <body style="text-align: center">
-123
-<table>
-    <% for(City cit: ( List<City> )request.getAttribute("city")){ %>
-    <tr><td><% cit.getCityName();%></td></tr>
-    <%}%>
-</table>
+
+
 
 <form action="/ShowAllFlights" method="get">
     <input type="submit" value="ShowAllFlights"/>
@@ -30,6 +26,11 @@
 
 
 <form action="/ShowFlightsByCity" method="get">
+    <select name="cityName">
+        <% for(City city: ( List<City> )request.getAttribute("city")){ %>
+        <option value=<%=city.getCityName()%>><%=city.getCityName()%></option>
+        <%}%>
+    </select>
     <input type="submit" value="Show Flight By City"/>
 </form>
 

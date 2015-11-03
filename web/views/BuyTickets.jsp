@@ -16,8 +16,8 @@
     <%--<% Flights flight = (Flights) request.getAttribute("flight");%>
 
 
-      <%--  <%request.getParameter("Id") %>--%>
-        <input type="hidden" name="flightId" value="<%request.getParameter("id");%>" />
+      <%--  <%request.getParameter("Id") hidden%>--%>
+        <input type="hidden" name="flightId" value="<%=request.getParameter("id")%>" />
 
         CounterOfSeats:
         <input type="text" size="5" name="seatCount"/>

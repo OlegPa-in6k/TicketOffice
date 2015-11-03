@@ -1,6 +1,7 @@
 <%@ page import="Core.Entity.City" %>
 <%@ page import="Persistance.CityDaoImpl" %>
 <%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
+<%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.
   User: employee
@@ -19,12 +20,7 @@
 <form action="/AddNewFlight" method="post">
   <label>
     <select name="cityName">
-      <%
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                new String[]{"applicationContext.xml"}, true);
-      %>
-      <% CityDaoImpl search = (CityDaoImpl) context.getBean("daoCity");%>
-      <%for (City city : search.getAll()) { %>
+      <% for(City city: (List<City>)request.getAttribute("city")){ %>
       <option value=<%=city.getCityName()%>><%=city.getCityName()%></option>
       <%}%>
     </select>
