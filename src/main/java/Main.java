@@ -17,10 +17,11 @@ public class Main {
                 new String[]{"applicationContext.xml"}, true);
 
 
-        InputController controller =  context.getBean(InputController.class);
+        /*InputController controller =  context.getBean(InputController.class);
 
-        controller.startChoose();
-
+        controller.startChoose();*/
+        CityDaoImpl city = context.getBean(CityDaoImpl.class);
+        System.out.println(city.getAll().size());
 
 
     }

@@ -19,9 +19,9 @@
 
 
 
-    <servlet>
+    <!--<servlet>
         <servlet-name>TicketOffice</servlet-name>
-        <servlet-class>servlet.AddNewFlight</servlet-class>
+        <servlet-class>servlet.TicketOffice</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>TicketOffice</servlet-name>
@@ -30,15 +30,15 @@
 
     <servlet>
         <servlet-name>ShowAllFlights</servlet-name>
-        <servlet-class>servlet.ShowFlights</servlet-class>
+        <servlet-class>servlet.ShowAllFlights</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>ShowAllFlights</servlet-name>
         <url-pattern>/TicketOffice/ShowAllFlights</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
 
-    <servlet>
+    <!--<servlet>
         <servlet-name>AddNewFlight</servlet-name>
         <servlet-class>servlet.AddNewFlight</servlet-class>
     </servlet>
@@ -71,10 +71,6 @@
 
 
 
-
-
-
-
-
+-->
 
 </web-app>

@@ -12,27 +12,16 @@
   <link rel="stylesheet" type="text/css" href="Style/Style.css">
 </head>
 <body style="text-align: center">
-<%--<a href="/QuickServlet">Click here to send GET request</a>
-<a href="/ShowFlights">GET Request AllFlights</a>--%>
 
 <br/><br/>
 
-<form action="ManagerOffice.jsp" method="post">
+<form action="views/ManagerOffice.jsp" method="post">
   <input type="submit" value="ManagerOffice" />
 </form>
 
-<form action="TicketOffice.jsp" method="post">
+<form action="/TicketOffice" method="get">
   <input type="submit" value="TicketOffice" />
 </form>
-<%--<form action="QuickServlet" method="post">
-  Width: <input type="text" size="5" name="width"/>
-  &nbsp;&nbsp;
-  Height <input type="text" size="5" name="height"/>
-  &nbsp;&nbsp;
-  <input type="submit" value="Calculate" />
-</form>
-<form action="ShowFlights" method="post">
-  <input type="submit" value="ShowFlights" />
-</form>--%>
+
 </body>
 </html>
