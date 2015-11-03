@@ -14,10 +14,14 @@
 <body>
 <form action="BuyTickets" method="post">
     <%--<% Flights flight = (Flights) request.getAttribute("flight");%>
-    --%><label>
+
+
+      <%--  <%request.getParameter("Id") %>--%>
+        <input type="hidden" name="flightId" value="<%request.getParameter("id");%>" />
+
         CounterOfSeats:
         <input type="text" size="5" name="seatCount"/>
-    </label>
+
 
     <input type=submit value="Buy"/>
 </form>

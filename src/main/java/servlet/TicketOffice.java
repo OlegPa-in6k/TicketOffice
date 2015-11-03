@@ -9,8 +9,8 @@ import java.io.IOException;
 /**
  * Created by employee on 11/3/15.
  */
-@WebServlet(urlPatterns = "/TicketOffice")
 
+@WebServlet(urlPatterns = "/TicketOffice")
 public class TicketOffice extends BaseServlet {
 
     @Override
