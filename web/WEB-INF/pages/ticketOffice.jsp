@@ -19,12 +19,12 @@
   <input type="submit" value="ShowAllFlights"/>
 </form>
 
-<form action="/mvc/flights" method="post">
-  <select name="cityName">
+<form action="/mvc/flights/" method="post">
+    <select name="cityName">
     <% for(City city: (List<City>)request.getAttribute("cities")){ %>
     <option value=<%=city.getCityName()%>><%=city.getCityName()%></option>
     <%}%>
-  </select>
+    </select>
   <input type="submit" value="Show Flight By City"/>
 </form>
 

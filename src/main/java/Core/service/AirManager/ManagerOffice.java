@@ -29,10 +29,10 @@ public class ManagerOffice {
 
     }
 
-    public  void deleteFlight(int id){
+    public  void deleteFlight(Flights flights){
 
-        Flights flight = (Flights) flightSearch.read(id);
-        flightSearch.delete(flight);
+
+        flightSearch.delete(flights);
     }
 
     public void minusEmptySeat(Flights flights, int seat){

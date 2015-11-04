@@ -1,14 +1,20 @@
 package web.mvc.controllers;
 
 
+import Core.Entity.Flights;
 import Core.service.TicketOffice.TicketOffice;
 import Persistance.CityDaoImpl;
+import Persistance.FlightDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by employee on 11/4/15.
@@ -21,7 +27,7 @@ public class TicketOffices {
     @Autowired
     private TicketOffice ticketOffice;
     @Autowired
-    private CityDaoImpl city;
+    private FlightDaoImpl flightSearch;
 
 
     @RequestMapping(value = "/ticketOffice" ,method = RequestMethod.GET)
@@ -34,17 +40,37 @@ public class TicketOffices {
         modelMap.addAttribute("flights", ticketOffice.getAllFlights());
         return "flights";
     }
-    @RequestMapping(value = "/flights/{cityName}", method = RequestMethod.POST)
-    public String getFlightsByCity(@PathVariable String cityName, ModelMap modelMap) {
+    @RequestMapping(value = "/flights/", method = RequestMethod.POST)
+    public String getFlightsByCity(@RequestParam("cityName") String cityName, ModelMap modelMap) {
+
+
         modelMap.addAttribute("flights", ticketOffice.searchFlightsByCity(cityName));
         return "flights";
     }
 
-   /* @RequestMapping(value = "/buyTicket", method = RequestMethod.POST)
-    public String buyTicket(ModelMap modelMap) {
-        modelMap.addAttribute("flights", ticketOffice.getAllFlights());
-        return "flights";
-    }*/
+    @RequestMapping(value = "/buyTicket", method = RequestMethod.GET)
+    public String selectSeats(@RequestParam("flightId") String flightId, ModelMap modelMap) {
+
+        modelMap.addAttribute("flight", flightSearch.read(Integer.parseInt(flightId)));
+
+        return "buyTicket";
+    }
+
+    @RequestMapping(value = "/buyTicket", method = RequestMethod.POST)
+    public String editContact(ModelMap modelMap,
+                              @RequestParam("flightId") String flightId,
+                              @RequestParam("seatCount") String seatCount) {
+        int id = Integer.parseInt(flightId);
+        int seats = Integer.parseInt(seatCount);
+        Flights flights = flightSearch.read(id);
+        String answer;
+        if(flights.hasSeats(seats)){
+            answer = "bought";
+        ticketOffice.setSeat(id, seats);
+        } else answer ="falseCount";
+        modelMap.addAttribute("flightId", flightId);
+        return answer;
+    }
 
 
 

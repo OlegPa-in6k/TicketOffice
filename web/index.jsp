@@ -15,7 +15,7 @@
 
 <br/><br/>
 
-<form action="/ManagerOffice" method="get">
+<form action="/mvc/managerOffice" method="get">
   <input type="submit" value="ManagerOffice" />
 </form>
 

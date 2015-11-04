@@ -4,32 +4,15 @@
   Created by IntelliJ IDEA.
   User: employee
   Date: 11/4/15
-  Time: 10:25 AM
+  Time: 4:49 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title></title>
+    <title></title>
 </head>
 <body>
-<%--<form action="/mvc/selectSeats" method="get">
-  <table border = 1>
-    <tr><td>№</td><td>Arrival City</td><td>Seats left</td><td>Departure Date <td> </td></tr>
-    <%int i = 1;%>
-    <%for (Flights flight : (List<Flights>) request.getAttribute("flights")) {%>
-    <tr>
-      <td><%=i++%></td>
-      <td><%=flight.getCity().getCityName()%></td>
-      <td><%=flight.getEmptySeat()%></td>
-      <td><%=flight.getDepartureDate()%></td>
-      <td><input type="hidden" name="flightId" value="<%=flight.getId()%>"/> </td>
-      <td><input type="submit"  value="Buy Ticket"/> </td>
-    </tr>
-    <%}%>
-  </table>
-</form>--%>
-
 <table border = 1>
   <tr><td>№</td><td>Arrival City</td><td>Seats left</td><td>Departure Date <td> </td></tr>
 
@@ -40,9 +23,8 @@
     <td><%=flight.getCity().getCityName()%></td>
     <td><%=flight.getEmptySeat()%></td>
     <td><%=flight.getDepartureDate()%></td>
-    <%--NOT SURE INT THIS FORM --%>
-    <td><form action="/mvc//buyTicket" >
-      <input type="submit" value="Buy">
+    <td><form action="/mvc//delete" method="post" >
+      <input type="submit" value="DELETE">
       <input type="hidden" name="flightId" value="<%=flight.getId()%>"/>
     </form></td>
 
