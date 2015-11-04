@@ -13,10 +13,7 @@
 </head>
 <body>
 <form action="BuyTickets" method="post">
-    <%--<% Flights flight = (Flights) request.getAttribute("flight");%>
 
-
-      <%--  <%request.getParameter("Id") hidden%>--%>
         <input type="hidden" name="flightId" value="<%=request.getParameter("id")%>" />
 
         CounterOfSeats:

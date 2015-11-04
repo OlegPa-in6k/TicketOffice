@@ -26,12 +26,23 @@ public class DeleteFlight extends BaseServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-
-        req.getRequestDispatcher("views/TicketOffice.jsp").forward(req,resp);
+        req.setAttribute("flights", flightSearch.getAll());
+        req.getRequestDispatcher("views/DeleteFlight.jsp").forward(req,resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        String flightId = req.getParameter("flightId");
+        int id = Integer.parseInt(flightId);
+        Flights flight = flightSearch.read(id);
+        flightSearch.delete(flight);
+        PrintWriter writer = resp.getWriter();
+        writer.println("<html>" + "Flight Was Added" + "<body>" +
+                " <form action=/ >\n" +
+                " <input type=\"submit\" value=\"Get to start\" />\n" +
+                " </form></body>" + "</html>");
+
+        writer.flush();
     }
 }
 

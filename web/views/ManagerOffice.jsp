@@ -18,7 +18,7 @@
 </form>
 <br><br>
 
-<form action="/DeleteFlight" method="post">
+<form action="/DeleteFlight" method="get">
   <input type="submit" value="DeleteFlight" />
 </form>
 <br><br>
