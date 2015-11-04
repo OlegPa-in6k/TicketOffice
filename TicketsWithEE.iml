@@ -15,6 +15,13 @@
         </sourceRoots>
       </configuration>
     </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/java/spring-config.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
@@ -51,5 +58,7 @@
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.9" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:4.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-core:4.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Spring MVC-4.2.2.RELEASE" level="project" />
   </component>
 </module>
