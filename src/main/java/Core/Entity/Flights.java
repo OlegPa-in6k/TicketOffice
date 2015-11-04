@@ -67,8 +67,9 @@ public class Flights {
         this.departureDate = Timestamp.valueOf(LocalDateTime.parse(date, FORMATTER));
     }
 
-    public LocalDateTime getLocalDateTime(){
-        return departureDate.toLocalDateTime();
+
+    public String getLocalDateTime(){
+        return departureDate.toLocalDateTime().format(DateTimeFormatter.RFC_1123_DATE_TIME);
     }
 
     public int getEmptySeat() {
@@ -87,6 +88,8 @@ public class Flights {
     public boolean hasSeats(int seat){
         return getEmptySeat()>=seat;
     }
+
+
 
 
 

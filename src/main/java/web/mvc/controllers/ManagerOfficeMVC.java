@@ -1,6 +1,6 @@
 package web.mvc.controllers;
 
-import Core.Entity.Flights;
+
 import Core.service.AirManager.ManagerOffice;
 import Persistance.CityDaoImpl;
 import Persistance.FlightDaoImpl;

@@ -36,7 +36,7 @@
   </select>
   Enter SeatCount:
   <input type="number"  size="5" name="seatCount" >
-  <input type="datetime"  name="departureDate" >
+  <input type="datetime-local"  name="departureDate" >
   <input type="submit" value="Add">
 </form>
 
