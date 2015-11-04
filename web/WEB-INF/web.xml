@@ -19,58 +19,5 @@
 
 
 
-    <!--<servlet>
-        <servlet-name>TicketOffice</servlet-name>
-        <servlet-class>servlet.TicketOffice</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>TicketOffice</servlet-name>
-        <url-pattern>/TicketOffice</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>ShowAllFlights</servlet-name>
-        <servlet-class>servlet.ShowAllFlights</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>ShowAllFlights</servlet-name>
-        <url-pattern>/TicketOffice/ShowAllFlights</url-pattern>
-    </servlet-mapping>-->
-
-    <!--<servlet>
-        <servlet-name>AddNewFlight</servlet-name>
-        <servlet-class>servlet.AddNewFlight</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>AddNewFlight</servlet-name>
-        <url-pattern>/ManagerOffice/AddNewFlight</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>BuyTicket</servlet-name>
-        <servlet-class>servlet.BuyTicket</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>BuyTicket</servlet-name>
-        <url-pattern>/TicketOffice/BuyTicket</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>DeleteFlight</servlet-name>
-        <servlet-class>servlet.DeleteFlight</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>DeleteFlight</servlet-name>
-        <url-pattern>/ManagerOffice/DeleteFlight</url-pattern>
-    </servlet-mapping>
-
-
-
-
--->
 
 </web-app>

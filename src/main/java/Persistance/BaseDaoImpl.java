@@ -60,8 +60,9 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
         startSession().update(entity);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public void delete(Object entity) {
+    public void delete(T entity) {
         startSession().merge(entity);
         startSession().delete(entity);
     }

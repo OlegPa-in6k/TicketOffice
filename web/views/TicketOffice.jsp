@@ -1,6 +1,4 @@
 <%@ page import="Core.Entity.City" %>
-<%@ page import="Persistance.CityDaoImpl" %>
-<%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
 <%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.

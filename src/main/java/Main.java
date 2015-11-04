@@ -20,7 +20,8 @@ public class Main {
         InputController controller =  context.getBean(InputController.class);
 
         controller.startChoose();
-       /* CityDaoImpl city = context.getBean(CityDaoImpl.class);
+     /*  //Show Cities
+        CityDaoImpl city = context.getBean(CityDaoImpl.class);
         System.out.println(city.getAll().size());*/
 
 
