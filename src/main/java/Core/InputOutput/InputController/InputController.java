@@ -1,9 +1,9 @@
 package Core.InputOutput.InputController;
 
-import service.AirManager.ManagerOffice;
+import Core.service.AirManager.ManagerOffice;
 
 import Core.InputOutput.Printer.PrinterImpl;
-import service.TicketOffice.TicketOffice;
+import Core.service.TicketOffice.TicketOffice;
 
 import java.util.Scanner;
 

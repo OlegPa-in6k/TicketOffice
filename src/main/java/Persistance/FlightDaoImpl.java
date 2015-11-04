@@ -19,7 +19,6 @@ public class FlightDaoImpl extends BaseDaoImpl<Flights> implements FlightDAO {
 
 
     @SuppressWarnings("Uncheked")
-
     public List<Flights> getFlightsByCity(int cityId) {
         Query query = startSession().createQuery("FROM Flights WHERE  id_city = :idCity");
         query.setParameter("idCity", cityId);

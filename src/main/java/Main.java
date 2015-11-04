@@ -1,10 +1,5 @@
-import Core.Dao.CityDao;
-import Core.Entity.City;
 import Core.InputOutput.InputController.InputController;
-import Persistance.CityDaoImpl;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.util.List;
 
 /**
  * Created by employee on 10/26/15.
@@ -14,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         //main program
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                new String[]{"applicationContext.xml"}, true);
+                new String[]{"spring-root-context.xml"}, true);
 
 
         InputController controller =  context.getBean(InputController.class);
@@ -81,15 +76,15 @@ public class Main {
 
 
 WEB.xml
-<servlet>
-<servlet-name >  </>
-<servlet-class> </>
-</servlet>
+<web.servlet>
+<web.servlet-name >  </>
+<web.servlet-class> </>
+</web.servlet>
 
-<servlet-mapping>
-<servlet-name> </>
+<web.servlet-mapping>
+<web.servlet-name> </>
 <url-pattern>  </>
-</servlet-mapping>
+</web.servlet-mapping>
 
 
 ??????? - ?? ???? ??????????? ???

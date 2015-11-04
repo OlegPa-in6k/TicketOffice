@@ -19,7 +19,7 @@
   <input type="submit" value="ManagerOffice" />
 </form>
 
-<form action="/TicketOffice" method="get">
+<form action="/mvc/ticketOffice" method="get">
   <input type="submit" value="TicketOffice" />
 </form>
 
