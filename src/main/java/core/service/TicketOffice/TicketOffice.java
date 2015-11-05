@@ -1,6 +1,8 @@
 package core.service.TicketOffice;
 
+import core.entity.City;
 import core.entity.Flights;
+import org.springframework.stereotype.Service;
 import persistance.CityDaoImpl;
 import persistance.FlightDaoImpl;
 import core.inputOutput.Printer.PrinterImpl;
@@ -13,6 +15,7 @@ import java.util.List;
 /**
  * Created by employee on 10/29/15.
  */
+@Service
 public class TicketOffice {
     public FlightDaoImpl flightSearch;
     public CityDaoImpl citySearch;
@@ -59,6 +62,14 @@ public class TicketOffice {
             flight.setEmptySeat(flight.getEmptySeat()-seat);
         }
         flightSearch.update(flight);
+    }
+
+    public Flights getFlightById(int id){
+        return flightSearch.read(id);
+    }
+
+    public List<City> getAllCitites(){
+        return citySearch.getAll();
     }
 
 

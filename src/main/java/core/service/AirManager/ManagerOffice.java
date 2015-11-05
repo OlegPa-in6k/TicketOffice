@@ -2,13 +2,18 @@ package core.service.AirManager;
 
 import core.entity.City;
 import core.entity.Flights;
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.stereotype.Service;
 import persistance.CityDaoImpl;
 import persistance.FlightDaoImpl;
+
+import java.util.List;
 
 /**
  * Created by employee on 10/28/15.
  */
+@Service
 public class ManagerOffice {
     FlightDaoImpl flightSearch;
     CityDaoImpl citySearch;
@@ -44,7 +49,11 @@ public class ManagerOffice {
     }
 
     public void addCity(City city){
-        citySearch.create(city);
+        try{  citySearch.create(city);
+        } catch (ConstraintViolationException e){
+
+        }
+
     }
 
     public void removeCity(City city){
@@ -60,5 +69,19 @@ public class ManagerOffice {
 
         }
 
+    }
+    public List<City> getAllCities(){
+        return citySearch.getAll();
+    }
+    public List<Flights> getAllFlights(){
+        return flightSearch.getAll();
+    }
+
+    public Flights getFlightByid(int id){
+        return flightSearch.read(id);
+    }
+
+    public City getCityById(int id){
+        return citySearch.read(id);
     }
 }

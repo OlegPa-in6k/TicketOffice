@@ -16,18 +16,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class TicketOffices extends BaseController {
 
 
-
-
-    @RequestMapping(value = "/ticketOffice" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/ticketOffice", method = RequestMethod.GET)
     public String getCities(ModelMap modelMap) {
-        modelMap.addAttribute("cities", citySearch.getAll());
+        modelMap.addAttribute("cities", ticketOffice.getAllCitites());
         return "ticketOffice";
     }
+
     @RequestMapping(value = "/ticketOffice/flights", method = RequestMethod.GET)
     public String getFlights(ModelMap modelMap) {
         modelMap.addAttribute("flights", ticketOffice.getAllFlights());
         return "flights";
     }
+
     @RequestMapping(value = "/ticketOffice/flights/", method = RequestMethod.POST)
     public String getFlightsByCity(@RequestParam("cityName") String cityName, ModelMap modelMap) {
 
@@ -39,7 +39,7 @@ public class TicketOffices extends BaseController {
     @RequestMapping(value = "/ticketOffice/buyTicket", method = RequestMethod.GET)
     public String selectSeats(@RequestParam("flightId") String flightId, ModelMap modelMap) {
 
-        modelMap.addAttribute("flight", flightSearch.read(Integer.parseInt(flightId)));
+        modelMap.addAttribute("flight", ticketOffice.getFlightById(Integer.parseInt(flightId)));
 
         return "buyTicket";
     }
@@ -50,19 +50,15 @@ public class TicketOffices extends BaseController {
                               @RequestParam("seatCount") String seatCount) {
         int id = Integer.parseInt(flightId);
         int seats = Integer.parseInt(seatCount);
-        Flights flights = flightSearch.read(id);
+        Flights flights = ticketOffice.getFlightById(id);
         String answer;
-        if(flights.hasSeats(seats)){
+        if (flights.hasSeats(seats)) {
             answer = "bought";
-        ticketOffice.setSeat(id, seats);
-        } else answer ="falseCount";
+            ticketOffice.setSeat(id, seats);
+        } else answer = "falseCount";
         modelMap.addAttribute("flightId", flightId);
         return answer;
     }
-
-
-
-
 
 
 }

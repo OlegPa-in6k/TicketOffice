@@ -25,8 +25,8 @@ public class ManagerOfficeMVC extends BaseController{
     }
     @RequestMapping(value = "/managerOffice/addFlight", method = RequestMethod.GET)
     public String addFlight(ModelMap modelMap){
-        modelMap.addAttribute("cities", citySearch.getAll());
-        modelMap.addAttribute("flights", flightSearch.getAll());
+        modelMap.addAttribute("cities", managerOffice.getAllCities());
+        modelMap.addAttribute("flights", managerOffice.getAllFlights());
         return "addFlight";
     }
     @RequestMapping(value = "/managerOffice/flights/addFlight", method = RequestMethod.POST)
@@ -38,13 +38,13 @@ public class ManagerOfficeMVC extends BaseController{
 
         managerOffice.setNewFlight(seat, arrivalCity, departureDate);
 
-        modelMap.addAttribute("cities", citySearch.getAll());
-        modelMap.addAttribute("flights", flightSearch.getAll());
+        modelMap.addAttribute("cities", managerOffice.getAllCities());
+        modelMap.addAttribute("flights", managerOffice.getAllFlights());
         return "addFlight";
     }
     @RequestMapping(value = "/managerOffice/flights/delete", method = RequestMethod.GET)
     public String DeleteFlight(ModelMap modelMap){
-        modelMap.addAttribute("flights", flightSearch.getAll());
+        modelMap.addAttribute("flights", managerOffice.getAllFlights());
         return "deleteFlight";
     }
 
@@ -53,14 +53,14 @@ public class ManagerOfficeMVC extends BaseController{
     public String DelFlight(@RequestParam("flightId") String flightId,
             ModelMap modelMap){
         int id = Integer.parseInt(flightId);
-        managerOffice.deleteFlight(flightSearch.read(id));
-        modelMap.addAttribute("flights", flightSearch.getAll());
+        managerOffice.deleteFlight(managerOffice.getFlightByid(id));
+        modelMap.addAttribute("flights", managerOffice.getAllFlights());
         return "deleteFlight";
     }
 
     @RequestMapping(value = "/managerOffice/city", method = RequestMethod.GET)
     public String ShowCity(ModelMap modelMap){
-        modelMap.addAttribute("cities", citySearch.getAll());
+        modelMap.addAttribute("cities", managerOffice.getAllCities());
         return "city";
     }
 
@@ -70,9 +70,9 @@ public class ManagerOfficeMVC extends BaseController{
             ModelMap modelMap){
         int id = Integer.parseInt(cityId);
 
-        managerOffice.removeCity(citySearch.read(id));
+        managerOffice.removeCity(managerOffice.getCityById(id));
 
-        modelMap.addAttribute("cities", citySearch.getAll());
+        modelMap.addAttribute("cities", managerOffice.getAllCities());
         return "city";
     }
     @RequestMapping(value = "/managerOffice/cities/add", method = RequestMethod.POST)
@@ -82,7 +82,7 @@ public class ManagerOfficeMVC extends BaseController{
         City city = new City();
         city.setCityName(cityName);
         managerOffice.addCity(city);
-        modelMap.addAttribute("cities", citySearch.getAll());
+        modelMap.addAttribute("cities", managerOffice.getAllCities());
         return "city";
     }
 
@@ -91,7 +91,7 @@ public class ManagerOfficeMVC extends BaseController{
     public String ShowCity(
             @RequestParam("id") String cityId,
             ModelMap modelMap){
-        modelMap.addAttribute("city", citySearch.read(Integer.parseInt(cityId)));
+        modelMap.addAttribute("city", managerOffice.getCityById(Integer.parseInt(cityId)));
         return "cityUpdate";
     }
     @RequestMapping(value = "managerOffice/city/update", method = RequestMethod.POST)
@@ -99,10 +99,10 @@ public class ManagerOfficeMVC extends BaseController{
             @RequestParam("id") String cityId,
             ModelMap modelMap,
             @RequestParam("cityName") String cityName){
-        City city = citySearch.read(Integer.parseInt(cityId));
+        City city = managerOffice.getCityById(Integer.parseInt(cityId));
         city.setCityName(cityName);
         managerOffice.updateCity(city);
-        modelMap.addAttribute("cities", citySearch.getAll());
+        modelMap.addAttribute("cities", managerOffice.getAllCities());
         return "city";
     }
 

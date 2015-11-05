@@ -18,7 +18,7 @@
 </form>
 <br><br>
 
-<form action="/mvc/flights/delete" method="get">
+<form action="/mvc/managerOffice/flights/delete" method="get">
   <input type="submit" value="DeleteFlight" />
 </form>
 <br><br>
