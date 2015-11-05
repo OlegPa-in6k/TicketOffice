@@ -1,6 +1,5 @@
 package web.mvc.controllers;
 
-
 import core.entity.Flights;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -38,9 +37,7 @@ public class TicketOffices extends BaseController {
 
     @RequestMapping(value = "/ticketOffice/buyTicket", method = RequestMethod.GET)
     public String selectSeats(@RequestParam("flightId") String flightId, ModelMap modelMap) {
-
         modelMap.addAttribute("flight", ticketOffice.getFlightById(Integer.parseInt(flightId)));
-
         return "buyTicket";
     }
 
@@ -59,6 +56,4 @@ public class TicketOffices extends BaseController {
         modelMap.addAttribute("flightId", flightId);
         return answer;
     }
-
-
 }

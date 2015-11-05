@@ -15,6 +15,8 @@
 <body>
 
 <form action="/mvc/managerOffice/city/update" method="post">
+   <% City cityToChange = (City) request.getAttribute("city");%>
+  Change <%=cityToChange.getCityName()%> to:
 <input type="text" size="10" name="cityName"/>
   <% City city = (City) request.getAttribute("city");%>
 <input type="hidden"  name="id" value="<%=city.getCityId()%>"/>
