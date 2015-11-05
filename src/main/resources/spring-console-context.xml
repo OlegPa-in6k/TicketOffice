@@ -11,6 +11,20 @@
  http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
     <context:annotation-config/>
+    <import resource="spring-root-context.xml"/>
+    <bean id="htmlPrinter" class="console.Printer.HTMLPirnter"/>
+    <bean id="baseDao" class="persistence.BaseDaoImpl" abstract="true"/>
+    <bean id="printerImpl" class="console.Printer.PrinterImpl"/>
+    <bean id="inputController" class="console.InputController.InputController">
+        <constructor-arg ref="officeManager"/>
+        <constructor-arg ref="officeTicket"/>
+        <constructor-arg ref="printerImpl"/>
+    </bean>
+    <bean id="inputControllerDAOImpl" class="console.InputController.InputControllerDAOImpl">
+        <constructor-arg ref="printerImpl"/>
+        <constructor-arg ref="daoFlight"/>
+        <constructor-arg ref="daoCity"/>
+    </bean>
 
 
 </beans>

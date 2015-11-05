@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         //main program
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                new String[]{"spring-root-context.xml"}, true);
+                new String[]{"spring-console-context.xml"}, true);
 
 
         InputController controller =  context.getBean(InputController.class);
