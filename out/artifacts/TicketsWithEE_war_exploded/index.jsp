@@ -18,17 +18,10 @@
 <p>
   <a href="/mvc/managerOffice"> Manager Office </a>
 </p>
+
 <p>
   <a href="/mvc/ticketOffice"> Ticket Office </a>
 </p>
-
-<%--<form action="mvc/managerOffice" method="get">
-  <input type="submit" value="ManagerOffice" />
-</form>
-
-<form action="mvc/ticketOffice" method="get">
-  <input type="submit" value="TicketOffice" />
-</form>--%>
 
 </body>
 </html>

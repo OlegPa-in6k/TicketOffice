@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d1aa790-6ea3-462d-8abd-4ae09699b3d8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/CityController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeMVC.java" afterPath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/TicketOffices.java" afterPath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/TicketOfficesController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/BaseController.java" afterPath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/BaseController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/CityController.java" afterPath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/CityController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeController.java" afterPath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/addFlight.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/addFlight.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/bought.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/bought.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/buyTicket.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/buyTicket.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/city.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/city.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/cityUpdate.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/cityUpdate.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/deleteFlight.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/deleteFlight.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/falseCount.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/falseCount.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/flights.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/flights.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TicketsWithEE_war_exploded/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/TicketsWithEE_war_exploded/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/managerOffice.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/managerOffice.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-root-context.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-root-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/ticketOffice.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/ticketOffice.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TicketsWithEE.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,18 +73,42 @@
       <file leaf-file-name="CityController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/web/mvc/controllers/CityController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16216215">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+            <state vertical-scroll-proportion="-0.1891892">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ManagerOfficeController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buyTicket.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/buyTicket.jsp">
+      <file leaf-file-name="BaseController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/web/mvc/controllers/BaseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.666667">
-              <caret line="40" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addFlight.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/addFlight.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.0">
+              <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -105,28 +117,8 @@
       <file leaf-file-name="city.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/city.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.666667">
-              <caret line="37" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cityUpdate.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/cityUpdate.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.666666">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deleteFlight.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/deleteFlight.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.333333">
-              <caret line="37" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state vertical-scroll-proportion="-10.666667">
+              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -164,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/servlet/a.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/ShowFlightsByCity.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/ShowAllFlights.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/TicketOffice.java" />
@@ -199,21 +190,22 @@
         <option value="$PROJECT_DIR$/src/main/java/core/service/TicketOffice/TicketOffice.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/service/AirManager/ManagerOffice.java" />
         <option value="$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOffice.java" />
-        <option value="$PROJECT_DIR$/src/main/java/web/mvc/controllers/BaseController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/cityUpdate.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/web/mvc/controllers/TicketOffices.java" />
         <option value="$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeMVC.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-root-context.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/flights.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/pages/addFlight.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/bought.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/buyTicket.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/pages/city.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/deleteFlight.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/falseCount.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/managerOffice.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/ticketOffice.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/web/mvc/controllers/BaseController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/addFlight.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/city.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/web/mvc/controllers/CityController.java" />
       </list>
     </option>
@@ -922,7 +914,7 @@
       <workItem from="1446627155481" duration="3458000" />
       <workItem from="1446630672180" duration="634000" />
       <workItem from="1446631434702" duration="20507000" />
-      <workItem from="1446707495479" duration="21905000" />
+      <workItem from="1446707495479" duration="22318000" />
     </task>
     <task id="LOCAL-00001" summary="qwe">
       <created>1446565976958</created>
@@ -982,7 +974,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59071000" />
+    <option name="totallyTimeSpent" value="59484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1337" height="1055" extended-state="6" />
@@ -1305,16 +1297,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/web/mvc/controllers/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/persistance/BaseDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1385,14 +1367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="74" selection-start-line="37" selection-start-column="74" selection-end-line="37" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc-context.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1409,14 +1383,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/addFlight.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.666667">
-          <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/bought.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.666667">
@@ -1429,14 +1395,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.666667">
           <caret line="40" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/city.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.666667">
-          <caret line="37" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1497,11 +1455,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/mvc/controllers/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/addFlight.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0">
+          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/city.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.666667">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/web/mvc/controllers/CityController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16216215">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding />
+        <state vertical-scroll-proportion="-0.1891892">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

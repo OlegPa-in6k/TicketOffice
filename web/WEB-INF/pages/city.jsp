@@ -22,24 +22,24 @@
         <td><%=city.getCityName()%>
         </td>
         <td>
-            <form action="/mvc/managerOffice/city/delete/<%=city.getCityId()%>" method="post">
+            <form action="/mvc/cities/delete/<%=city.getCityId()%>" method="post">
                 <input type="submit" value="Delete">
             </form>
         </td>
-        <td><a href="/mvc/managerOffice/city/update?id=<%=city.getCityId()%>"> Edit </a></td>
+        <td><a href="/mvc/cities/update?id=<%=city.getCityId()%>"> Edit </a></td>
     </tr>
     <%}%>
 </table>
 <p>U can add new City:
 
-<form action="/mvc/managerOffice/cities/add" method="post">
+<form action="/mvc/cities/cities/add" method="post">
     <input type="text" size="10" name="cityName">
     <input type="submit" value="Add">
 </form>
 </p>
 
 <p>
-    <a href="/mvc/managerOffice/addFlight"> Back </a>
+    <a href="/mvc/cities/addFlight"> Back </a>
 </p>
 
 </body>

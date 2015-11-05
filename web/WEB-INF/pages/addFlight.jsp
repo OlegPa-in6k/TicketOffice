@@ -47,7 +47,7 @@
 <br>
 
 <p>
-    <a href="/mvc/managerOffice/city">Add New City</a>
+    <a href="/mvc/cities">Add New City</a>
 </p>
 
 <p>
