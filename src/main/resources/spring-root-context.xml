@@ -12,8 +12,6 @@
 
     <context:annotation-config/>
 
-
-
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -48,16 +46,10 @@
 
 
     <bean id="daoCity" class="persistence.CityDaoImpl"/>
-
-
-
-
-
     <bean id="officeManager" class="core.service.AirManager.ManagerOffice">
         <constructor-arg ref="daoFlight"/>
         <constructor-arg ref="daoCity"/>
     </bean>
-
     <bean id="officeTicket" class="core.service.TicketOffice.TicketOffice">
         <constructor-arg ref="daoCity"/>
         <constructor-arg ref="daoFlight"/>

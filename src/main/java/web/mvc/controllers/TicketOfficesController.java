@@ -20,7 +20,8 @@ public class TicketOfficesController extends BaseController {
     @RequestMapping( method = RequestMethod.GET)
     public String getCities(ModelMap modelMap) {
         modelMap.addAttribute("cities", ticketOffice.getAllCitites());
-        return "ticketOffice";
+        modelMap.addAttribute("flights", ticketOffice.getAllFlights());
+        return "ticketOffice2";
     }
 
     @RequestMapping(value = "/flights", method = RequestMethod.GET)
@@ -57,4 +58,14 @@ public class TicketOfficesController extends BaseController {
         modelMap.addAttribute("flightId", flightId);
         return answer;
     }
+
+    @RequestMapping(value = "/flights/{cityName}", method = RequestMethod.GET)
+    public String getFlightsByCity1(@PathVariable String cityName, ModelMap modelMap) {
+
+        modelMap.addAttribute("cities", ticketOffice.getAllCitites());
+        modelMap.addAttribute("flights", ticketOffice.searchFlightsByCity(cityName));
+        return "ticketOffice2";
+    }
+
+
 }
