@@ -29,7 +29,7 @@ public class ManagerOfficeMVC extends BaseController{
         modelMap.addAttribute("flights", flightSearch.getAll());
         return "addFlight";
     }
-    @RequestMapping(value = "flights/addFlight", method = RequestMethod.POST)
+    @RequestMapping(value = "/managerOffice/flights/addFlight", method = RequestMethod.POST)
     public String addNewFlight(@RequestParam("seatCount") String seatCount,
                                @RequestParam("cityName") String arrivalCity,
                                @RequestParam("departureDate") String departureDate, ModelMap modelMap){
@@ -42,14 +42,14 @@ public class ManagerOfficeMVC extends BaseController{
         modelMap.addAttribute("flights", flightSearch.getAll());
         return "addFlight";
     }
-    @RequestMapping(value = "/flights/delete", method = RequestMethod.GET)
+    @RequestMapping(value = "/managerOffice/flights/delete", method = RequestMethod.GET)
     public String DeleteFlight(ModelMap modelMap){
         modelMap.addAttribute("flights", flightSearch.getAll());
         return "deleteFlight";
     }
 
     //Don't WORK!!!!!!!!
-    @RequestMapping(value = "/flights/delete", method = RequestMethod.POST)
+    @RequestMapping(value = "/managerOffice/flights/delete", method = RequestMethod.POST)
     public String DelFlight(@RequestParam("flightId") String flightId,
             ModelMap modelMap){
         int id = Integer.parseInt(flightId);
@@ -70,7 +70,7 @@ public class ManagerOfficeMVC extends BaseController{
             ModelMap modelMap){
         int id = Integer.parseInt(cityId);
 
-        citySearch.delete(citySearch.read(id));
+        managerOffice.removeCity(citySearch.read(id));
 
         modelMap.addAttribute("cities", citySearch.getAll());
         return "city";
@@ -81,7 +81,7 @@ public class ManagerOfficeMVC extends BaseController{
             ModelMap modelMap){
         City city = new City();
         city.setCityName(cityName);
-        citySearch.create(city);
+        managerOffice.addCity(city);
         modelMap.addAttribute("cities", citySearch.getAll());
         return "city";
     }
@@ -101,7 +101,7 @@ public class ManagerOfficeMVC extends BaseController{
             @RequestParam("cityName") String cityName){
         City city = citySearch.read(Integer.parseInt(cityId));
         city.setCityName(cityName);
-        citySearch.update(city);
+        managerOffice.updateCity(city);
         modelMap.addAttribute("cities", citySearch.getAll());
         return "city";
     }

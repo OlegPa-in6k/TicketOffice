@@ -15,11 +15,11 @@
 </head>
 <body style="text-align: center">
 
-<form action="/mvc/flights" method="get">
+<form action="/mvc/ticketOffice/flights" method="get">
   <input type="submit" value="ShowAllFlights"/>
 </form>
 
-<form action="/mvc/flights/" method="post">
+<form action="/mvc/ticketOffice/flights/" method="post">
     <select name="cityName">
     <% for(City city: (List<City>)request.getAttribute("cities")){ %>
     <option value=<%=city.getCityName()%>><%=city.getCityName()%></option>

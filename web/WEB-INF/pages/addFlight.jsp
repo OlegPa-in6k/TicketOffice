@@ -21,7 +21,7 @@
   <%}%>
 </table>
 <br>
-<form action="/mvc/flights/addFlight" method="post">
+<form action="/mvc/managerOffice/flights/addFlight" method="post">
   <select name="cityName">
     <% for(City city: (List<City>)request.getAttribute("cities")){ %>
     <option  value=<%=city.getCityName()%>><%=city.getCityName()%></option>
@@ -32,14 +32,11 @@
   <input type="text"  name="departureDate" >
   <input type="submit" value="Add">
 </form>
-
 <br>
-
 <p>
 <a href="/mvc/managerOffice/city" >Add New City</a>
 </p>
 
-<p>
 <p>
   <a href="/mvc/managerOffice">Back</a>
 </p>

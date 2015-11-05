@@ -23,7 +23,7 @@
     <td><%=flight.getCity().getCityName()%></td>
     <td><%=flight.getEmptySeat()%></td>
     <td><%=flight.getDepartureDate()%></td>
-    <td><form action="/mvc//flights/delete" method="post" >
+    <td><form action="/mvc/managerOffice/flights/delete" method="post" >
       <input type="hidden" name="flightId" value="<%=flight.getId()%>"/>
       <input type="submit" value="DELETE">
     </form></td>

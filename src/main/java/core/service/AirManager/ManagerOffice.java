@@ -53,4 +53,12 @@ public class ManagerOffice {
 
         }
     }
+
+    public void updateCity(City city){
+        try{ citySearch.update(city);
+        } catch (DataIntegrityViolationException e){
+
+        }
+
+    }
 }

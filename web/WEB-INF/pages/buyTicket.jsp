@@ -12,7 +12,7 @@
     <title></title>
 </head>
 <body>
-<form action="/mvc/buyTicket" method="post" >
+<form action="/mvc/ticketOffice/buyTicket" method="post" >
   Your Flight:
   <table>
     <tr><td>№</td><td>Arrival City</td><td>Seats left</td><td>Departure Date <td> </td></tr>

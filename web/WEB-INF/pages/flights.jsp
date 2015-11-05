@@ -41,7 +41,7 @@
     <td><%=flight.getEmptySeat()%></td>
     <td><%=flight.getDepartureDate()%></td>
     <%--NOT SURE INT THIS FORM --%>
-    <td><form action="/mvc//buyTicket" >
+    <td><form action="/mvc/ticketOffice/buyTicket" >
       <input type="submit" value="Buy">
       <input type="hidden" name="flightId" value="<%=flight.getId()%>"/>
     </form></td>
