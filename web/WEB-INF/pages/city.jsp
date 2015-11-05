@@ -32,14 +32,14 @@
 </table>
 <p>U can add new City:
 
-<form action="/mvc/cities/cities/add" method="post">
+<form action="/mvc/cities/add" method="post">
     <input type="text" size="10" name="cityName">
     <input type="submit" value="Add">
 </form>
 </p>
 
 <p>
-    <a href="/mvc/cities/addFlight"> Back </a>
+    <a href="/mvc/managerOffice"> Back </a>
 </p>
 
 </body>

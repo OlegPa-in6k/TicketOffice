@@ -26,14 +26,14 @@ public class ManagerOfficeController extends BaseController {
         return "managerOffice";
     }
 
-    @RequestMapping(value = "/addFlight", method = RequestMethod.GET)
+    @RequestMapping(value = "/flights", method = RequestMethod.GET)
     public String addFlight(ModelMap modelMap) {
         modelMap.addAttribute("cities", managerOffice.getAllCities());
         modelMap.addAttribute("flights", managerOffice.getAllFlights());
         return "addFlight";
     }
 
-    @RequestMapping(value = "/addFlight/new", method = RequestMethod.POST)
+    @RequestMapping(value = "/flights/new", method = RequestMethod.POST)
     public String addNewFlight(@RequestParam String seatCount,
                                @RequestParam("cityName") String arrivalCity,
                                @RequestParam String departureDate, ModelMap modelMap) {

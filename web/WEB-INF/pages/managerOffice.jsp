@@ -13,14 +13,20 @@
 </head>
 <body style="text-align: center">
 
-<form action="/mvc/managerOffice/addFlight" method="get">
+<p>
+    <a href="/mvc/managerOffice/flights">Show Flights</a>
+</p>
+<p>
+    <a href="/mvc/managerOffice/flights/delete">Delete Flights</a>
+</p>
+<%--<form action="/mvc/managerOffice/flights" method="get">
     <input type="submit" value="AddNewFlight"/>
 </form>
 <br><br>
 
 <form action="/mvc/managerOffice/flights/delete" method="get">
     <input type="submit" value="DeleteFlight"/>
-</form>
+</form>--%>
 <br><br>
 
 <p>

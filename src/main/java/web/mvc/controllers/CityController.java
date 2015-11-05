@@ -55,14 +55,14 @@ public class CityController extends BaseController {
 
     @RequestMapping(value = "/update/{cityId}", method = RequestMethod.POST)
     public String EditCity(
-            @PathVariable String cityId,
+            @PathVariable int cityId,
             ModelMap modelMap,
             @RequestParam("cityName") String cityName) {
-        City city = managerOffice.getCityById(Integer.parseInt(cityId));
+        City city = managerOffice.getCityById(cityId);
         city.setCityName(cityName);
         managerOffice.updateCity(city);
         modelMap.addAttribute("cities", managerOffice.getAllCities());
-        return "redirect:city";
+        return "city";
     }
 
 }

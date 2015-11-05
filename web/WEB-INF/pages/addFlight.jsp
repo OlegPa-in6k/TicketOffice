@@ -12,8 +12,7 @@
         <td>№</td>
         <td>Arrival City</td>
         <td>Seats left</td>
-        <td>Departure Date
-        <td></td>
+        <td>Departure Date</td></td>
     </tr>
 
     <%int i = 1;%>
@@ -32,17 +31,21 @@
 </table>
 <br>
 
-<form action="/mvc/managerOffice/addFlight/new" method="post">
+<form action="/mvc/managerOffice/flights/new" method="post">
     <select name="cityName">
         <% for (City city : (List<City>) request.getAttribute("cities")) { %>
         <option value=<%=city.getCityName()%>><%=city.getCityName()%>
         </option>
         <%}%>
     </select>
-    Enter SeatCount:
-    <input type="number" size="5" name="seatCount">
-    <input type="text" name="departureDate">
-    <input type="submit" value="Add">
+    <table border = 1>
+      <tr><td>Enter count of seats:</td><td> <input type="number" size="5" name="seatCount"></td></tr>
+        <tr><td>Enter Departure Date: </td><td><input type="text" name="departureDate"></td></tr>
+        <tr><td></td><td></td></tr>
+         </tr>
+        <input type="submit" value="Add">
+
+    </table>
 </form>
 <br>
 
