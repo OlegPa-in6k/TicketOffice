@@ -1,12 +1,12 @@
 package web.servlet;
 
 
-import Persistance.CityDaoImpl;
-import Persistance.FlightDaoImpl;
+import persistance.CityDaoImpl;
+import persistance.FlightDaoImpl;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-import Core.service.AirManager.ManagerOffice;
-import Core.service.TicketOffice.TicketOffice;
+import core.service.AirManager.ManagerOffice;
+import core.service.TicketOffice.TicketOffice;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

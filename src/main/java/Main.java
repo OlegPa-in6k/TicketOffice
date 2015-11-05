@@ -1,4 +1,4 @@
-import Core.InputOutput.InputController.InputController;
+import core.inputOutput.InputController.InputController;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**

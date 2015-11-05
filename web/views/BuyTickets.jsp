@@ -1,4 +1,4 @@
-<%@ page import="Core.Entity.Flights" %>
+<%@ page import="core.entity.Flights" %>
 <%--
   Created by IntelliJ IDEA.
   User: employee

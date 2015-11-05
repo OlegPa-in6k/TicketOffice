@@ -1,4 +1,4 @@
-<%@ page import="Core.Entity.City" %>
+<%@ page import="core.entity.City" %>
 <%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.

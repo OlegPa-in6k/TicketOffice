@@ -1,4 +1,4 @@
-<%@ page import="Core.Entity.Flights" %>
+<%@ page import="core.entity.Flights" %>
 <%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.

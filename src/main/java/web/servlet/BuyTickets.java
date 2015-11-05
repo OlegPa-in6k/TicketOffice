@@ -1,6 +1,6 @@
 package web.servlet;
 
-import Core.Entity.Flights;
+import core.entity.Flights;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

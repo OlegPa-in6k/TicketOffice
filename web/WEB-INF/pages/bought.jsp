@@ -11,11 +11,11 @@
     <title></title>
 </head>
 <body>
-Conratulations!  U bought Ticket!
 
+<p>Conratulations!  U bought Ticket!
 <form action=/ method=post>
   <input type=submit value="Get to start"/>
 </form>
-
+</p>
 </body>
 </html>

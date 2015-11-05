@@ -1,6 +1,12 @@
 <%@ page import="core.entity.Flights" %>
 <%@ page import="java.util.List" %>
-<%@ page import="core.entity.City" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: employee
+  Date: 11/4/15
+  Time: 4:49 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -17,31 +23,18 @@
     <td><%=flight.getCity().getCityName()%></td>
     <td><%=flight.getEmptySeat()%></td>
     <td><%=flight.getDepartureDate()%></td>
+    <td><form action="/mvc//flights/delete" method="post" >
+      <input type="hidden" name="flightId" value="<%=flight.getId()%>"/>
+      <input type="submit" value="DELETE">
+    </form></td>
+
   </tr>
   <%}%>
 </table>
-<br>
-<form action="/mvc/flights/addFlight" method="post">
-  <select name="cityName">
-    <% for(City city: (List<City>)request.getAttribute("cities")){ %>
-    <option  value=<%=city.getCityName()%>><%=city.getCityName()%></option>
-    <%}%>
-  </select>
-  Enter SeatCount:
-  <input type="number"  size="5" name="seatCount" >
-  <input type="text"  name="departureDate" >
-  <input type="submit" value="Add">
-</form>
 
-<br>
-
-<p>
-<a href="/mvc/managerOffice/city" >Add New City</a>
-</p>
-
-<p>
 <p>
   <a href="/mvc/managerOffice">Back</a>
 </p>
+
 </body>
 </html>

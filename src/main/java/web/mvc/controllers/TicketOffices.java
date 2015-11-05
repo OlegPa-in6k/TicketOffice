@@ -1,11 +1,7 @@
 package web.mvc.controllers;
 
 
-import Core.Entity.Flights;
-import Core.service.TicketOffice.TicketOffice;
-import Persistance.CityDaoImpl;
-import Persistance.FlightDaoImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import core.entity.Flights;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,14 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Created by employee on 11/4/15.
  */
 @Controller
-public class TicketOffices {
+public class TicketOffices extends BaseController {
 
-    @Autowired
-    private CityDaoImpl citySearch;
-    @Autowired
-    private TicketOffice ticketOffice;
-    @Autowired
-    private FlightDaoImpl flightSearch;
+
 
 
     @RequestMapping(value = "/ticketOffice" ,method = RequestMethod.GET)
