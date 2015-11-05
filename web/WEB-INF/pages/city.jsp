@@ -30,8 +30,7 @@
     </tr>
     <%}%>
 </table>
-<p>U can add new City:
-
+<p>If there is no city that you need, you can add it:
 <form action="/mvc/cities/add" method="post">
     <input type="text" size="10" name="cityName">
     <input type="submit" value="Add">

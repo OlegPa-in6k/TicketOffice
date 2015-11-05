@@ -3,9 +3,9 @@ package core.service.TicketOffice;
 import core.entity.City;
 import core.entity.Flights;
 import org.springframework.stereotype.Service;
-import persistance.CityDaoImpl;
-import persistance.FlightDaoImpl;
-import core.inputOutput.Printer.PrinterImpl;
+import persistence.CityDaoImpl;
+import persistence.FlightDaoImpl;
+import console.Printer.PrinterImpl;
 import org.hibernate.exception.SQLGrammarException;
 
 import java.sql.Timestamp;

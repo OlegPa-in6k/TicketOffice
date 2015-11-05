@@ -1,5 +1,5 @@
 <%@ page import="core.entity.City" %>
-<%@ page import="persistance.CityDaoImpl" %>
+<%@ page import="persistence.CityDaoImpl" %>
 <%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
 <%@ page import="java.util.List" %>
 <%--

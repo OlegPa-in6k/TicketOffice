@@ -38,7 +38,7 @@ Your Flight:
 <p>
 
 <form action="/mvc/ticketOffice/buyTicket/<%=flight.getId()%>" method="post">
-    CounterOfSeats U need:
+   Please, enter counter of tickets you need to:
     <input type="number" size="5" name="seatCount"/>
     <input type=submit value="Buy"/>
 </form>

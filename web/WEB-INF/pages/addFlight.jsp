@@ -12,7 +12,8 @@
         <td>№</td>
         <td>Arrival City</td>
         <td>Seats left</td>
-        <td>Departure Date</td></td>
+        <td>Departure Date</td>
+        </td>
     </tr>
 
     <%int i = 1;%>
@@ -38,11 +39,16 @@
         </option>
         <%}%>
     </select>
-    <table border = 1>
-      <tr><td>Enter count of seats:</td><td> <input type="number" size="5" name="seatCount"></td></tr>
-        <tr><td>Enter Departure Date: </td><td><input type="text" name="departureDate"></td></tr>
-        <tr><td></td><td></td></tr>
-         </tr>
+    <table border=1>
+        <tr>
+            <td>Enter count of seats:</td>
+            <td><input type="number" size="5" name="seatCount"></td>
+        </tr>
+        <tr>
+            <td>Enter Departure Date:</td>
+            <td><input type="text" name="departureDate"></td>
+        </tr>
+
         <input type="submit" value="Add">
 
     </table>

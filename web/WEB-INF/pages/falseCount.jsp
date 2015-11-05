@@ -11,7 +11,7 @@
     <title></title>
 </head>
 <body>
-No current count of Seats on this Flight!
+No current count of seats on this Flight!
 Try another flight:
 <form action=/mvc/ticketOffice method=get>
     <input type=submit value="Ticket Office"/>

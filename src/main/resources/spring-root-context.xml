@@ -44,35 +44,38 @@
 
     <tx:annotation-driven proxy-target-class="true" transaction-manager="transactionManager"/>
 
-    <bean id="daoFlight" class="persistance.FlightDaoImpl"/>
+    <bean id="daoFlight" class="persistence.FlightDaoImpl"/>
 
 
-    <bean id="daoCity" class="persistance.CityDaoImpl"/>
+    <bean id="daoCity" class="persistence.CityDaoImpl"/>
 
-    <bean id="InputControllerDAOImpl" class="core.inputOutput.InputController.InputControllerDAOImpl">
-        <constructor-arg ref="PrinterImpl"/>
-        <constructor-arg ref="daoFlight"/>
-        <constructor-arg ref="daoCity"/>
-    </bean>
-    <bean id="PrinterImpl" class="core.inputOutput.Printer.PrinterImpl">   </bean>
 
-    <bean id="InputController" class="core.inputOutput.InputController.InputController">
-        <constructor-arg ref="officeManager"/>
-        <constructor-arg ref="officeTicket"/>
-        <constructor-arg ref="PrinterImpl"/>
-    </bean>
+
+
+
     <bean id="officeManager" class="core.service.AirManager.ManagerOffice">
         <constructor-arg ref="daoFlight"/>
         <constructor-arg ref="daoCity"/>
-
     </bean>
+
     <bean id="officeTicket" class="core.service.TicketOffice.TicketOffice">
         <constructor-arg ref="daoCity"/>
         <constructor-arg ref="daoFlight"/>
-
     </bean>
-    <bean id="htmlPrinter" class="core.inputOutput.Printer.HTMLPirnter"/>
-  <bean id="baseDao" class="persistance.BaseDaoImpl" abstract="true"/>
+
+    <bean id="htmlPrinter" class="console.Printer.HTMLPirnter"/>
+    <bean id="baseDao" class="persistence.BaseDaoImpl" abstract="true"/>
+    <bean id="printerImpl" class="console.Printer.PrinterImpl"/>
+    <bean id="inputController" class="console.InputController.InputController">
+        <constructor-arg ref="officeManager"/>
+        <constructor-arg ref="officeTicket"/>
+        <constructor-arg ref="printerImpl"/>
+    </bean>
+    <bean id="inputControllerDAOImpl" class="console.InputController.InputControllerDAOImpl">
+        <constructor-arg ref="printerImpl"/>
+        <constructor-arg ref="daoFlight"/>
+        <constructor-arg ref="daoCity"/>
+    </bean>
 
 
 

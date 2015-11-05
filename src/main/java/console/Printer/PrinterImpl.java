@@ -1,4 +1,4 @@
-package core.inputOutput.Printer;
+package console.Printer;
 
 import core.entity.Flights;
 

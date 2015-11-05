@@ -5,8 +5,8 @@ import core.entity.Flights;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
-import persistance.CityDaoImpl;
-import persistance.FlightDaoImpl;
+import persistence.CityDaoImpl;
+import persistence.FlightDaoImpl;
 
 import java.util.List;
 

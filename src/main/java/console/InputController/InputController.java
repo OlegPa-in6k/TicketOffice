@@ -1,8 +1,8 @@
-package core.inputOutput.InputController;
+package console.InputController;
 
+import console.Printer.PrinterImpl;
 import core.service.AirManager.ManagerOffice;
 
-import core.inputOutput.Printer.PrinterImpl;
 import core.service.TicketOffice.TicketOffice;
 
 import java.util.Scanner;

@@ -35,7 +35,7 @@
         <td><%=flight.getDepartureDate()%>
         </td>
         <td>
-            <form action="buyTicket/<%=flight.getId()%>">
+            <form action="/mvc/ticketOffice/buyTicket/<%=flight.getId()%>">
                 <input type="submit" value="Buy">
             </form>
         </td>

@@ -1,4 +1,4 @@
-package core.inputOutput.InputController;
+package console.InputController;
 
 /**
  * Created by Oleg on 26.10.2015.

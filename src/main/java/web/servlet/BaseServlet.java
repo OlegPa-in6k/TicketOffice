@@ -1,8 +1,8 @@
 package web.servlet;
 
 
-import persistance.CityDaoImpl;
-import persistance.FlightDaoImpl;
+import persistence.CityDaoImpl;
+import persistence.FlightDaoImpl;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import core.service.AirManager.ManagerOffice;

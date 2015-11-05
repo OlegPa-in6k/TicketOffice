@@ -1,9 +1,9 @@
-package core.inputOutput.InputController;
+package console.InputController;
 
 import core.entity.Flights;
-import core.inputOutput.Printer.PrinterImpl;
-import persistance.CityDaoImpl;
-import persistance.FlightDaoImpl;
+import console.Printer.PrinterImpl;
+import persistence.CityDaoImpl;
+import persistence.FlightDaoImpl;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;

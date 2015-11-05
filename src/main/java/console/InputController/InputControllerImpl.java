@@ -1,7 +1,7 @@
-package core.inputOutput.InputController;
+package console.InputController;
 
-import persistance.FlightDaoImpl;
-import core.inputOutput.Printer.PrinterImpl;
+import persistence.FlightDaoImpl;
+import console.Printer.PrinterImpl;
 
 import java.util.Scanner;
 

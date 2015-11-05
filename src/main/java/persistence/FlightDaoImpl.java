@@ -1,4 +1,4 @@
-package persistance;
+package persistence;
 
 import core.dao.FlightDAO;
 import core.entity.Flights;
