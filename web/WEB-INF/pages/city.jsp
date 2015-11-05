@@ -13,25 +13,33 @@
     <title></title>
 </head>
 <body>
-<table border =1 >
-  <tr><td>City Name</td></tr>
-  <% for(City city: (List<City>)request.getAttribute("cities")){ %>
-  <tr>
-    <td><%=city.getCityName()%></td>
-    <td><a href="/mvc/managerOffice/city/delete?id=<%=city.getCityId()%>"> Delete </a></td>
-    <td><a href="/mvc/managerOffice/city/update?id=<%=city.getCityId()%>"> Edit </a></td>
-  </tr>
-  <%}%>
+<table border=1>
+    <tr>
+        <td>City Name</td>
+    </tr>
+    <% for (City city : (List<City>) request.getAttribute("cities")) { %>
+    <tr>
+        <td><%=city.getCityName()%>
+        </td>
+        <td>
+            <form action="/mvc/managerOffice/city/delete/<%=city.getCityId()%>" method="post">
+                <input type="submit" value="Delete">
+            </form>
+        </td>
+        <td><a href="/mvc/managerOffice/city/update?id=<%=city.getCityId()%>"> Edit </a></td>
+    </tr>
+    <%}%>
 </table>
 <p>U can add new City:
+
 <form action="/mvc/managerOffice/cities/add" method="post">
-  <input type="text" size="10" name="cityName">
-  <input type="submit" value="Add">
+    <input type="text" size="10" name="cityName">
+    <input type="submit" value="Add">
 </form>
 </p>
 
 <p>
-  <a href="/mvc/managerOffice/addFlight"> Back </a>
+    <a href="/mvc/managerOffice/addFlight"> Back </a>
 </p>
 
 </body>

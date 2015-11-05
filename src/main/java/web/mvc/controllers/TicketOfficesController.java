@@ -3,6 +3,7 @@ package web.mvc.controllers;
 import core.entity.Flights;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,22 +13,23 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Created by employee on 11/4/15.
  */
 @Controller
-public class TicketOffices extends BaseController {
+@RequestMapping(value = "/ticketOffice")
+public class TicketOfficesController extends BaseController {
 
 
-    @RequestMapping(value = "/ticketOffice", method = RequestMethod.GET)
+    @RequestMapping( method = RequestMethod.GET)
     public String getCities(ModelMap modelMap) {
         modelMap.addAttribute("cities", ticketOffice.getAllCitites());
         return "ticketOffice";
     }
 
-    @RequestMapping(value = "/ticketOffice/flights", method = RequestMethod.GET)
+    @RequestMapping(value = "/flights", method = RequestMethod.GET)
     public String getFlights(ModelMap modelMap) {
         modelMap.addAttribute("flights", ticketOffice.getAllFlights());
         return "flights";
     }
 
-    @RequestMapping(value = "/ticketOffice/flights/", method = RequestMethod.POST)
+    @RequestMapping(value = "/flights/", method = RequestMethod.POST)
     public String getFlightsByCity(@RequestParam("cityName") String cityName, ModelMap modelMap) {
 
 
@@ -35,23 +37,22 @@ public class TicketOffices extends BaseController {
         return "flights";
     }
 
-    @RequestMapping(value = "/ticketOffice/buyTicket", method = RequestMethod.GET)
-    public String selectSeats(@RequestParam("flightId") String flightId, ModelMap modelMap) {
+    @RequestMapping(value = "/buyTicket/{flightId}", method = RequestMethod.GET)
+    public String selectSeats(@PathVariable String flightId, ModelMap modelMap) {
         modelMap.addAttribute("flight", ticketOffice.getFlightById(Integer.parseInt(flightId)));
         return "buyTicket";
     }
 
-    @RequestMapping(value = "/ticketOffice/buyTicket", method = RequestMethod.POST)
+    @RequestMapping(value = "/buyTicket/{flightId}", method = RequestMethod.POST)
     public String editContact(ModelMap modelMap,
-                              @RequestParam("flightId") String flightId,
-                              @RequestParam("seatCount") String seatCount) {
-        int id = Integer.parseInt(flightId);
-        int seats = Integer.parseInt(seatCount);
-        Flights flights = ticketOffice.getFlightById(id);
+                              @PathVariable int flightId,
+                              @RequestParam("seatCount") int seatCount) {
+
+        Flights flights = ticketOffice.getFlightById(flightId);
         String answer;
-        if (flights.hasSeats(seats)) {
+        if (flights.hasSeats(seatCount)) {
             answer = "bought";
-            ticketOffice.setSeat(id, seats);
+            ticketOffice.setSeat(flightId, seatCount);
         } else answer = "falseCount";
         modelMap.addAttribute("flightId", flightId);
         return answer;

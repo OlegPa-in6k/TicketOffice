@@ -14,14 +14,7 @@
 No current count of Seats on this Flight!
 Try another flight:
 <form action=/mvc/ticketOffice method=get>
-  <input type=submit value="Ticket Office"/>
+    <input type=submit value="Ticket Office"/>
 </form>
-<%--Try another seatcount:
-<form action=/mvc/buyTicket method=get>
-  <%String id = request.getParameter("flightId");%>
-  <input type="hidden" name="flightId" value=<%=id%> />
-  <input type=submit value="Change seatCount"/>
-</form>--%>
-
 </body>
 </html>

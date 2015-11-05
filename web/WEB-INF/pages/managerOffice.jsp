@@ -8,23 +8,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="../Style/Style.css">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../Style/Style.css">
 </head>
 <body style="text-align: center">
 
 <form action="/mvc/managerOffice/addFlight" method="get">
-  <input type="submit" value="AddNewFlight" />
+    <input type="submit" value="AddNewFlight"/>
 </form>
 <br><br>
 
 <form action="/mvc/managerOffice/flights/delete" method="get">
-  <input type="submit" value="DeleteFlight" />
+    <input type="submit" value="DeleteFlight"/>
 </form>
 <br><br>
 
 <p>
-  <a href="/">Back</a>
+    <a href="/">Back</a>
 </p>
 
 </body>

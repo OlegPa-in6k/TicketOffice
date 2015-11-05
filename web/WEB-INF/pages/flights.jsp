@@ -10,44 +10,38 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title></title>
+    <title></title>
 </head>
 <body>
-<%--<form action="/mvc/selectSeats" method="get">
-  <table border = 1>
-    <tr><td>№</td><td>Arrival City</td><td>Seats left</td><td>Departure Date <td> </td></tr>
+
+<table border=1>
+    <tr>
+        <td>№</td>
+        <td>Arrival City</td>
+        <td>Seats left</td>
+        <td>Departure Date
+        <td></td>
+    </tr>
+
     <%int i = 1;%>
     <%for (Flights flight : (List<Flights>) request.getAttribute("flights")) {%>
     <tr>
-      <td><%=i++%></td>
-      <td><%=flight.getCity().getCityName()%></td>
-      <td><%=flight.getEmptySeat()%></td>
-      <td><%=flight.getDepartureDate()%></td>
-      <td><input type="hidden" name="flightId" value="<%=flight.getId()%>"/> </td>
-      <td><input type="submit"  value="Buy Ticket"/> </td>
+        <td><%=i++%>
+        </td>
+        <td><%=flight.getCity().getCityName()%>
+        </td>
+        <td><%=flight.getEmptySeat()%>
+        </td>
+        <td><%=flight.getDepartureDate()%>
+        </td>
+        <td>
+            <form action="buyTicket/<%=flight.getId()%>">
+                <input type="submit" value="Buy">
+            </form>
+        </td>
+
     </tr>
     <%}%>
-  </table>
-</form>--%>
-
-<table border = 1>
-  <tr><td>№</td><td>Arrival City</td><td>Seats left</td><td>Departure Date <td> </td></tr>
-
-  <%int i = 1;%>
-  <%for (Flights flight : (List<Flights>) request.getAttribute("flights")) {%>
-  <tr>
-    <td><%=i++%></td>
-    <td><%=flight.getCity().getCityName()%></td>
-    <td><%=flight.getEmptySeat()%></td>
-    <td><%=flight.getDepartureDate()%></td>
-    <%--NOT SURE INT THIS FORM --%>
-    <td><form action="/mvc/ticketOffice/buyTicket" >
-      <input type="submit" value="Buy">
-      <input type="hidden" name="flightId" value="<%=flight.getId()%>"/>
-    </form></td>
-
-  </tr>
-  <%}%>
 </table>
 
 </body>

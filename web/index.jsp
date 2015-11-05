@@ -15,13 +15,13 @@
 
 <br/><br/>
 
-<form action="/mvc/managerOffice" method="get">
-  <input type="submit" value="ManagerOffice" />
-</form>
+<p>
+  <a href="/mvc/managerOffice"> Manager Office </a>
+</p>
 
-<form action="/mvc/ticketOffice" method="get">
-  <input type="submit" value="TicketOffice" />
-</form>
+<p>
+  <a href="/mvc/ticketOffice"> Ticket Office </a>
+</p>
 
 </body>
 </html>

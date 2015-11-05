@@ -10,28 +10,29 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Ticket Office</title>
-  <link rel="stylesheet" type="text/css" href="../Style/Style.css">
+    <title>Ticket Office</title>
+    <link rel="stylesheet" type="text/css" href="../Style/Style.css">
 </head>
 <body style="text-align: center">
 
 <form action="/mvc/ticketOffice/flights" method="get">
-  <input type="submit" value="ShowAllFlights"/>
+    <input type="submit" value="ShowAllFlights"/>
 </form>
 
 <form action="/mvc/ticketOffice/flights/" method="post">
     <select name="cityName">
-    <% for(City city: (List<City>)request.getAttribute("cities")){ %>
-    <option value=<%=city.getCityName()%>><%=city.getCityName()%></option>
-    <%}%>
+        <% for (City city : (List<City>) request.getAttribute("cities")) { %>
+        <option value=<%=city.getCityName()%>><%=city.getCityName()%>
+        </option>
+        <%}%>
     </select>
-  <input type="submit" value="Show Flight By City"/>
+    <input type="submit" value="Show Flight By City"/>
 </form>
 
 <br>
 
 <form action=/ method=post>
-  <input type=submit value="Get to start"/>
+    <input type=submit value="Get to start"/>
 </form>
 
 </body>

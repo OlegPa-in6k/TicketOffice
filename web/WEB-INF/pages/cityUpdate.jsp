@@ -14,13 +14,12 @@
 </head>
 <body>
 
-<form action="/mvc/managerOffice/city/update" method="post">
-   <% City cityToChange = (City) request.getAttribute("city");%>
-  Change <%=cityToChange.getCityName()%> to:
-<input type="text" size="10" name="cityName"/>
-  <% City city = (City) request.getAttribute("city");%>
-<input type="hidden"  name="id" value="<%=city.getCityId()%>"/>
-<input type="submit" name="Change"/>
+
+<% City city = (City) request.getAttribute("city");%>
+Change <%=city.getCityName()%> to:
+<form action="/mvc/managerOffice/city/update/<%=city.getCityId()%>>" method="post">
+    <input type="text" size="10" name="cityName"/>
+    <input type="submit" name="Change"/>
 </form>
 </body>
 </html>

@@ -13,27 +13,39 @@
     <title></title>
 </head>
 <body>
-<table border = 1>
-  <tr><td>№</td><td>Arrival City</td><td>Seats left</td><td>Departure Date <td> </td></tr>
+<table border=1>
+    <tr>
+        <td>№</td>
+        <td>Arrival City</td>
+        <td>Seats left</td>
+        <td>Departure Date
+        <td></td>
+    </tr>
 
-  <%int i = 1;%>
-  <%for (Flights flight : (List<Flights>) request.getAttribute("flights")) {%>
-  <tr>
-    <td><%=i++%></td>
-    <td><%=flight.getCity().getCityName()%></td>
-    <td><%=flight.getEmptySeat()%></td>
-    <td><%=flight.getDepartureDate()%></td>
-    <td><form action="/mvc/managerOffice/flights/delete" method="post" >
-      <input type="hidden" name="flightId" value="<%=flight.getId()%>"/>
-      <input type="submit" value="DELETE">
-    </form></td>
+    <%int i = 1;%>
+    <%for (Flights flight : (List<Flights>) request.getAttribute("flights")) {%>
+    <tr>
+        <td><%=i++%>
+        </td>
+        <td><%=flight.getCity().getCityName()%>
+        </td>
+        <td><%=flight.getEmptySeat()%>
+        </td>
+        <td><%=flight.getDepartureDate()%>
+        </td>
+        <td>
+            <form action="/mvc/managerOffice/flights/delete/<%=flight.getId()%>" method="post">
 
-  </tr>
-  <%}%>
+                <input type="submit" value="DELETE">
+            </form>
+        </td>
+
+    </tr>
+    <%}%>
 </table>
 
 <p>
-  <a href="/mvc/managerOffice">Back</a>
+    <a href="/mvc/managerOffice">Back</a>
 </p>
 
 </body>

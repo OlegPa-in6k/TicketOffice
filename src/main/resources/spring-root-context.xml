@@ -12,19 +12,7 @@
 
     <context:annotation-config/>
 
-    <!--<aop:config>-->
-    <!--<aop:pointcut id="myPointcut"-->
-    <!--expression="execution(* carShop.*.*(..))" />-->
-    <!--<aop:advisor advice-ref="txAdvice" pointcut-ref="myPointcut" />-->
-    <!--</aop:config>-->
 
-    <!--<tx:advice id="txAdvice" transaction-manager="transactionManager">-->
-    <!--<tx:attributes>-->
-    <!--<tx:method name="get*" propagation="REQUIRED" read-only="true" />-->
-    <!--<tx:method name="remove*" propagation="REQUIRED" read-only="true" />-->
-    <!--<tx:method name="save*" propagation="REQUIRED" />-->
-    <!--</tx:attributes>-->
-    <!--</tx:advice>-->
 
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -65,7 +53,6 @@
         <constructor-arg ref="PrinterImpl"/>
         <constructor-arg ref="daoFlight"/>
         <constructor-arg ref="daoCity"/>
-
     </bean>
     <bean id="PrinterImpl" class="core.inputOutput.Printer.PrinterImpl">   </bean>
 
