@@ -10,6 +10,10 @@
 
     <properties>
         <spring-framework.version>4.2.2.RELEASE</spring-framework.version>
+        <bootstrap.version>2.2.2</bootstrap.version>
+        <jquery.version>1.9.0</jquery.version>
+
+        <commons-lang.version>2.6</commons-lang.version>
     </properties>
     <build>
         <plugins>
@@ -79,5 +83,12 @@
             <version>3.1.0</version>
         </dependency>
 
+        <!--BootsTrap-->
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>${bootstrap.version}</version>
+        </dependency>
     </dependencies>
 </project>
