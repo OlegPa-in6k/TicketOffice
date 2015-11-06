@@ -44,6 +44,9 @@ Your Flight:
     <input type=submit value="Buy"/>
 </form>
 </p>
+<p>
+    <a href="/">Back</a>
+</p>
 
 
 </body>

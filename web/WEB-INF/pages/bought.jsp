@@ -15,9 +15,9 @@
 
 <p>Conratulations! U bought Ticket!
 
-<form action=/ method=post>
-    <input type=submit value="Get to start"/>
-</form>
+<p>
+    <a href="/">Back</a>
+</p>
 </p>
 </body>
 </html>

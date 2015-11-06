@@ -19,6 +19,9 @@
 
 <div>
     <div style="float: left">
+        <p>
+            <a href="/">Back</a>
+        </p>
         All available flights:
         <table border=1>
             <tr>
