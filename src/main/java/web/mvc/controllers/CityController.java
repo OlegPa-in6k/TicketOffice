@@ -21,7 +21,7 @@ public class CityController extends BaseController {
         return "city";
     }
 
-    @RequestMapping(value = "/delete/{cityId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/delete/{cityId}", method = RequestMethod.DELETE)
     public String DeleteCity(
             @PathVariable int cityId,
             ModelMap modelMap) {
@@ -35,7 +35,7 @@ public class CityController extends BaseController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String AddCity(
-            @RequestParam("cityName") String cityName,
+            @RequestParam String cityName,
             ModelMap modelMap) {
         City city = new City();
         city.setCityName(cityName);
@@ -47,9 +47,9 @@ public class CityController extends BaseController {
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
     public String ShowCity(
-            @RequestParam("id") String cityId,
+            @RequestParam String id,
             ModelMap modelMap) {
-        modelMap.addAttribute("city", managerOffice.getCityById(Integer.parseInt(cityId)));
+        modelMap.addAttribute("city", managerOffice.getCityById(Integer.parseInt(id)));
         return "cityUpdate";
     }
 
@@ -57,7 +57,7 @@ public class CityController extends BaseController {
     public String EditCity(
             @PathVariable int cityId,
             ModelMap modelMap,
-            @RequestParam("cityName") String cityName) {
+            @RequestParam String cityName) {
         City city = managerOffice.getCityById(cityId);
         city.setCityName(cityName);
         managerOffice.updateCity(city);

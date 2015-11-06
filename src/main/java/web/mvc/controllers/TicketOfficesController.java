@@ -21,7 +21,7 @@ public class TicketOfficesController extends BaseController {
     public String getCities(ModelMap modelMap) {
         modelMap.addAttribute("cities", ticketOffice.getAllCitites());
         modelMap.addAttribute("flights", ticketOffice.getAllFlights());
-        return "ticketOffice2";
+        return "ticketOffice";
     }
 
     @RequestMapping(value = "/flights", method = RequestMethod.GET)
@@ -31,7 +31,7 @@ public class TicketOfficesController extends BaseController {
     }
 
     @RequestMapping(value = "/flights/", method = RequestMethod.POST)
-    public String getFlightsByCity(@RequestParam("cityName") String cityName, ModelMap modelMap) {
+    public String getFlightsByCity(@RequestParam String cityName, ModelMap modelMap) {
 
 
         modelMap.addAttribute("flights", ticketOffice.searchFlightsByCity(cityName));
@@ -47,8 +47,7 @@ public class TicketOfficesController extends BaseController {
     @RequestMapping(value = "/buyTicket/{flightId}", method = RequestMethod.POST)
     public String editContact(ModelMap modelMap,
                               @PathVariable int flightId,
-                              @RequestParam("seatCount") int seatCount) {
-
+                              @RequestParam int seatCount) {
         Flights flights = ticketOffice.getFlightById(flightId);
         String answer;
         if (flights.hasSeats(seatCount)) {
@@ -61,10 +60,9 @@ public class TicketOfficesController extends BaseController {
 
     @RequestMapping(value = "/flights/{cityName}", method = RequestMethod.GET)
     public String getFlightsByCity1(@PathVariable String cityName, ModelMap modelMap) {
-
         modelMap.addAttribute("cities", ticketOffice.getAllCitites());
         modelMap.addAttribute("flights", ticketOffice.searchFlightsByCity(cityName));
-        return "ticketOffice2";
+        return "ticketOffice";
     }
 
 

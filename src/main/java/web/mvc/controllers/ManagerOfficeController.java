@@ -35,12 +35,10 @@ public class ManagerOfficeController extends BaseController {
 
     @RequestMapping(value = "/flights/new", method = RequestMethod.POST)
     public String addNewFlight(@RequestParam String seatCount,
-                               @RequestParam("cityName") String arrivalCity,
+                               @RequestParam String cityName,
                                @RequestParam String departureDate, ModelMap modelMap) {
         int seat = Integer.parseInt(seatCount);
-
-        managerOffice.setNewFlight(seat, arrivalCity, departureDate);
-
+        managerOffice.setNewFlight(seat, cityName, departureDate);
         modelMap.addAttribute("cities", managerOffice.getAllCities());
         modelMap.addAttribute("flights", managerOffice.getAllFlights());
         return "addFlight";

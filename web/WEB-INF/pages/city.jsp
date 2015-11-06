@@ -23,6 +23,7 @@
         </td>
         <td>
             <form action="/mvc/cities/delete/<%=city.getCityId()%>" method="post">
+                <input type="hidden" name="_method" value="DELETE" />
                 <input type="submit" value="Delete">
             </form>
         </td>

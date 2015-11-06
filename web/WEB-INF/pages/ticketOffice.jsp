@@ -1,5 +1,6 @@
 <%@ page import="core.entity.City" %>
 <%@ page import="java.util.List" %>
+<%@ page import="core.entity.Flights" %>
 <%--
   Created by IntelliJ IDEA.
   User: employee
@@ -15,25 +16,54 @@
 </head>
 <body style="text-align: center">
 
-<form action="/mvc/ticketOffice/flights" method="get">
-    <input type="submit" value="ShowAllFlights"/>
-</form>
+<div>
+    <div style="float: left">
+        All available flights:
+        <table border=1>
+            <tr>
+                <td>№</td>
+                <td>Arrival City</td>
+                <td>Seats left</td>
+                <td>Departure Date
+                <td></td>
+            </tr>
 
-<form action="/mvc/ticketOffice/flights/" method="post">
-    <select name="cityName">
-        <% for (City city : (List<City>) request.getAttribute("cities")) { %>
-        <option value=<%=city.getCityName()%>><%=city.getCityName()%>
-        </option>
-        <%}%>
-    </select>
-    <input type="submit" value="Show Flight By City"/>
-</form>
+            <%int i = 1;%>
+            <%for (Flights flight : (List<Flights>) request.getAttribute("flights")) {%>
+            <tr>
+                <td><%=i++%>
+                </td>
+                <td><%=flight.getCity().getCityName()%>
+                </td>
+                <td><%=flight.getEmptySeat()%>
+                </td>
+                <td><%=flight.getDepartureDate()%>
+                </td>
+                <td>
+                    <form action="/mvc/ticketOffice/buyTicket/<%=flight.getId()%>">
+                        <input type="submit" value="Buy">
+                    </form>
+                </td>
+            </tr>
+            <%}%>
+        </table>
+    </div>
+    <div style="float: left">You can choose flights by City:
+        <table>
+            <tr>
+                <td><a href="/mvc/ticketOffice">All Flights</a></td>
+            </tr>
+            <% for (City city1 : (List<City>) request.getAttribute("cities")) { %>
+            <tr>
+                <td><a href="/mvc/ticketOffice/flights/<%=city1.getCityName()%>"><%=city1.getCityName()%>
+                </a></td>
+            </tr>
+            <%}%>
+        </table>
+    </div>
+</div>
 
-<br>
 
-<form action=/ method=post>
-    <input type=submit value="Get to start"/>
-</form>
 
 </body>
 </html>
