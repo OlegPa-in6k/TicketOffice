@@ -51,7 +51,7 @@ public class ManagerOfficeController extends BaseController {
     }
 
 
-    @RequestMapping(value = "/flights/delete/{flightId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/flights/delete/{flightId}", method = RequestMethod.DELETE)
     public String DelFlight(@PathVariable String flightId,
                             ModelMap modelMap) {
         int id = Integer.parseInt(flightId);

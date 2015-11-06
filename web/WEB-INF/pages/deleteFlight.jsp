@@ -35,7 +35,7 @@
         </td>
         <td>
             <form action="/mvc/managerOffice/flights/delete/<%=flight.getId()%>" method="post">
-
+                <input type="hidden" name="_method" value="DELETE" />
                 <input type="submit" value="DELETE">
             </form>
         </td>

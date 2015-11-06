@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d1aa790-6ea3-462d-8abd-4ae09699b3d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/CityController.java" afterPath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/CityController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeController.java" afterPath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/TicketOfficesController.java" afterPath="$PROJECT_DIR$/src/main/java/web/mvc/controllers/TicketOfficesController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/city.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/city.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/cityUpdate.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/cityUpdate.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/ticketOffice.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/ticketOffice.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/deleteFlight.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/deleteFlight.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TicketsWithEE_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/TicketsWithEE_war_exploded/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TicketsWithEE.iws" />
@@ -37,7 +33,17 @@
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/city.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-7.3333335">
-              <caret line="25" column="69" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="69" />
+              <caret line="25" column="69" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deleteFlight.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/deleteFlight.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.47887325">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -69,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="66" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
+              <caret line="53" column="87" selection-start-line="53" selection-start-column="87" selection-end-line="53" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -85,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7837838">
+            <state vertical-scroll-proportion="0.0">
               <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
               <folding />
             </state>
@@ -125,16 +131,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ticketOffice2.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/ticketOffice2.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.666666">
-              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -193,7 +189,6 @@
         <option value="$PROJECT_DIR$/src/main/java/web/mvc/controllers/TicketOffices.java" />
         <option value="$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeMVC.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/bought.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/pages/deleteFlight.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/web/mvc/controllers/BaseController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/managerOffice.jsp" />
@@ -207,11 +202,12 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/ticketOffice2.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/ticketOffice.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/cityUpdate.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeController.java" />
         <option value="$PROJECT_DIR$/src/main/java/web/mvc/controllers/TicketOfficesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/web/mvc/controllers/CityController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/city.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/deleteFlight.jsp" />
       </list>
     </option>
   </component>
@@ -920,7 +916,7 @@
       <workItem from="1446630672180" duration="634000" />
       <workItem from="1446631434702" duration="20507000" />
       <workItem from="1446707495479" duration="29902000" />
-      <workItem from="1446794900634" duration="3147000" />
+      <workItem from="1446794900634" duration="3231000" />
     </task>
     <task id="LOCAL-00001" summary="qwe">
       <created>1446565976958</created>
@@ -1000,11 +996,17 @@
       <option name="project" value="LOCAL" />
       <updated>1446739091207</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="With delete">
+      <created>1446799011511</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1446799011511</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70215000" />
+    <option name="totallyTimeSpent" value="70299000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1337" height="1055" extended-state="6" />
@@ -1055,7 +1057,8 @@
     <MESSAGE value="Only one function don't work" />
     <MESSAGE value="All work ! Alexander Don't check" />
     <MESSAGE value="All work ! Alexander Check!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="All work ! Alexander Check!!!" />
+    <MESSAGE value="With delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="With delete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1311,13 +1314,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/deleteFlight.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.0">
-          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/falseCount.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.333333">
@@ -1405,14 +1401,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="66" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/web/mvc/controllers/TicketOfficesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1441,14 +1429,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/city.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3333335">
-          <caret line="25" column="69" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.666667">
@@ -1459,8 +1439,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7837838">
+        <state vertical-scroll-proportion="0.0">
           <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/mvc/controllers/ManagerOfficeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="87" selection-start-line="53" selection-start-column="87" selection-end-line="53" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/city.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.3333335">
+          <caret line="25" column="69" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/deleteFlight.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47887325">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
