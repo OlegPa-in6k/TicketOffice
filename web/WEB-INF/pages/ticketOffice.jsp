@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <%@ page import="core.entity.City" %>
 <%@ page import="java.util.List" %>
 <%@ page import="core.entity.Flights" %>

@@ -53,7 +53,7 @@ public class CityController extends BaseController {
         return "cityUpdate";
     }
 
-    @RequestMapping(value = "/update/{cityId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/update/{cityId}", method = RequestMethod.PATCH)
     public String EditCity(
             @PathVariable int cityId,
             ModelMap modelMap,

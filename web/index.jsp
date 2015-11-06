@@ -1,4 +1,4 @@
-<%--
+<!DOCTYPE html><%--
   Created by IntelliJ IDEA.
   User: employee
   Date: 10/29/15

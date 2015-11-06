@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page import="core.entity.City" %>
 <%--
@@ -19,6 +20,7 @@
 Change <%=city.getCityName()%> to:
 <form action="/mvc/cities/update/<%=city.getCityId()%>" method="post">
     <input type="text" size="10" value=<%=city.getCityName()%> name="cityName"/>
+    <input type="hidden" name="_method" value="PATCH" />
     <input type="submit" name="Change"/>
 </form>
 </body>

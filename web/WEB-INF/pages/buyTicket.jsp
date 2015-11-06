@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <%@ page import="core.entity.Flights" %>
 <%--
   Created by IntelliJ IDEA.
