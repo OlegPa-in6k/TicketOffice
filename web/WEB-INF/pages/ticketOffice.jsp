@@ -17,7 +17,8 @@
 
 </head>
 <body >
-<div><nav class="navbar navbar-inverse navbar-fixed-top">
+<div>
+    <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -43,9 +44,13 @@
     <!-- /.container-fluid -->
 </nav>
 </div>
-<div>
-    <div class="col-sm-12 col-lg-4 panel panel-default">
-        <div class="panel-heading">Panel heading</div>
+
+<div style="position: inherit">
+    <div class="col-sm-12 col-lg-3">
+
+    </div>
+    <div class="col-sm-12 col-lg-4 panel panel-default" >
+        <div class="panel-heading">Available flights:</div>
         <table class="table table-striped">
             <tr>
                 <td>№</td>
@@ -57,15 +62,15 @@
             <%int i = 1;%>
             <%for (Flights flight : (List<Flights>) request.getAttribute("flights")) {%>
             <tr>
-                <td width="10%"><%=i++%>
+                <td ><%=i++%>
                 </td>
-                <td width="30%"><%=flight.getCity().getCityName()%>
+                <td><%=flight.getCity().getCityName()%>
                 </td>
-                <td width="10%"><%=flight.getEmptySeat()%>
+                <td ><%=flight.getEmptySeat()%>
                 </td>
-                <td width="40%"><%=flight.getDepartureDate()%>
+                <td><%=flight.getDepartureDate()%>
                 </td>
-                <td width="10%">
+                <td >
                     <form action="/mvc/ticketOffice/buyTicket/<%=flight.getId()%>">
                         <input type="submit" value="Buy">
                     </form>
@@ -89,12 +94,9 @@
             <%}%>
         </table>
     </div>
-    <div >
+    <div class="col-sm-12 col-lg-3">
 
     </div>
 </div>
-
-
-
 </body>
 </html>

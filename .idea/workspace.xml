@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d1aa790-6ea3-462d-8abd-4ae09699b3d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/flights.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/flights.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TicketsWithEE_war_exploded/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/TicketsWithEE_war_exploded/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/ticketOffice.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/ticketOffice.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -72,8 +71,8 @@
       <file leaf-file-name="ticketOffice.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/ticketOffice.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1971831">
-              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.5492958">
+              <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -838,7 +837,7 @@
       <workItem from="1446630672180" duration="634000" />
       <workItem from="1446631434702" duration="20507000" />
       <workItem from="1446707495479" duration="29902000" />
-      <workItem from="1446794900634" duration="22188000" />
+      <workItem from="1446794900634" duration="23326000" />
     </task>
     <task id="LOCAL-00001" summary="qwe">
       <created>1446565976958</created>
@@ -954,11 +953,17 @@
       <option name="project" value="LOCAL" />
       <updated>1446820840215</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="trying with first page">
+      <created>1446823965361</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1446823965361</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89256000" />
+    <option name="totallyTimeSpent" value="90394000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1337" height="1055" extended-state="6" />
@@ -1454,8 +1459,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/ticketOffice.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1971831">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.5492958">
+          <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
           <folding />
         </state>
       </provider>

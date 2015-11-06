@@ -55,26 +55,33 @@
         </div>
     </div>
 </div>
+<%--<div class="row">
+    <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+            <img src="/resources/images/OfficePhoto.jpg"  >
+        </a>
+    </div>
+    <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+            <img src="/resources/images/TicketOffice.jpg"   >
+        </a>
+    </div>
+
+</div>--%>
 <div>
     <div class="col-sm-12 col-lg-6">
         <a href="/mvc/managerOffice">
-            <img src="/resources/images/OfficePhoto.jpg">
+            <img src="/resources/images/OfficePhoto.jpg" width="100%" height="100%" sizes="100%">
         </a>
     </div>
     <div class="col-sm-12 col-lg-6">
-        <a href="/mvc//ticketOffice">
-            <img src="/resources/images/TicketOffice.jpg">
+        <a href="/mvc/ticketOffice">
+            <img src="/resources/images/TicketOffice.jpg" width="100%" height="100%" sizes="100%">
         </a>
     </div>
 </div>
-<div>
-    <span class="label label-info">Info</span>
-    <span class="label label-warning">Warning</span>
-    <span class="label label-danger">Danger</span>
-    <span class="label label-default">Default</span>
-    <span class="label label-primary">Primary</span>
-    <span class="label label-success">Success</span>
-</div>
+
+
 
 
 
