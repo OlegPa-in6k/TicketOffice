@@ -7,10 +7,12 @@ myApp.controller('firstCtrl', function ($scope, $http) {
         $scope.arr = response.data;
 
     });
-    $http.get('/mvc/api/flights').then(function (response) {
+    $http.get('/mvc/api/cities').then(function (response) {
         $scope.cities = response.data;
     })
 
-
+    $http.get('/mvc/api/flights').then(function (response) {
+        $scope.flights = response.data;
+    })
 
 })

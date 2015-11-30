@@ -1,6 +1,7 @@
 package web.mvc.controllers;
 
 import core.entity.City;
+import core.entity.Flights;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,10 +21,14 @@ public class MainController extends BaseController {
 
         return new String[] {"first", "second", "qwer"};
     }
-    @RequestMapping(value = "/flights")
-    public List<City> getFlights() {
+    @RequestMapping(value = "/cities")
+    public List<City> getCities() {
 
         return managerOffice.getAllCities();
+    }
+    @RequestMapping(value = "/flights")
+    public List<Flights> getFlights() {
+        return managerOffice.getAllFlights();
     }
 
 }
