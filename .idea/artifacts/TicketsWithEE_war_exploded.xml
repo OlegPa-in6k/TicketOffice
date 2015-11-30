@@ -36,6 +36,12 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.2.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.webjars:bootstrap:3.2.0" />
           <element id="library" level="project" name="Maven: org.webjars:jquery:2.1.1" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.6.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.6.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.6.3" />
+          <element id="library" level="project" name="Maven: org.webjars:angularjs:1.4.8" />
+          <element id="library" level="project" name="Maven: org.webjars:bootstrap:4.0.0-alpha" />
+          <element id="library" level="project" name="Maven: org.webjars:jquery:1.11.1" />
         </element>
       </element>
     </root>
