@@ -26,14 +26,17 @@ public class MainController extends BaseController {
     }
 
     @RequestMapping(value = "/cities/add", method = RequestMethod.POST)
-    public void addCity(@RequestBody City city  ){
-               managerOffice.addCity(city);
+    public void addCity(@RequestBody String  cityName  ){
+        City city = new City();
+        city.setCityName(cityName);
+        managerOffice.addCity(city);
     }
-    @RequestMapping(value = "/cities/delete", method = RequestMethod.DELETE)
-    public void deleteCity(@RequestBody City  City){
+
+    @RequestMapping(value = "/cities/delete/{cityId}", method = RequestMethod.DELETE)
+    public void deleteCity(@PathVariable("cityId") int cityId ){
+        managerOffice.removeCity(managerOffice.getCityById(cityId));
+    }
 
 
-        managerOffice.removeCity(City);
-    }
 
 }

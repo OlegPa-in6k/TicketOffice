@@ -11,21 +11,23 @@ myApp.controller('MainController', function ($scope, $http) {
         $scope.flights = response.data;
     });
 
-    $scope.addCity = function(city) {
+    $scope.addCity = function(cityName) {
         $http
-            .post("/mvc/angular/cities/add", {name : city.cityName})
+            .post("/mvc/angular/cities/add", cityName)
             .then(function (response) {
                 updateCities();
             });
     };
 
-    //$scope.deleteCity = function (city) {
-    //    $http
-    //        .delete("/mvc/angular/cities/delete" , city)
-    //        .then(function (response) {
-    //            updateCities();
-    //        });
-    //};
+
+
+    $scope.deleteCity = function (city) {
+        $http
+            .delete("/mvc/angular/cities/delete/" + city.cityId)
+            .then(function (response) {
+                updateCities();
+            });
+    };
 
     var updateCities = function () {
         $http
