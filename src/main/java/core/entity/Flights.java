@@ -25,7 +25,8 @@ public class Flights {
     private int id;
     @Column(name = "EmptySeat")
     private int emptySeat;
-
+    @JsonDeserialize(using = JsonDateDeserializer.class)
+    @JsonSerialize(using = JsonDateSerializer.class)
     @Column(name = "departureDate")
     private Timestamp departureDate;
 
@@ -65,8 +66,7 @@ public class Flights {
     public Timestamp getDepartureDate() {
         return departureDate;
     }
-    @JsonDeserialize(using = JsonDateDeserializer.class)
-    @JsonSerialize(using = JsonDateSerializer.class)
+
     public void setDepartureDate(String date) {
         this.departureDate = Timestamp.valueOf(LocalDateTime.parse(date, FORMATTER));
     }

@@ -6,31 +6,40 @@
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.min.js"></script>
     <script src = "scripts/app.js"></script>
 </head>
-<body ng-app = "myApp">
+<body >
+
+<div ng-app = "myApp">
 
 <div ng-controller="MainController">
-
-<div>
-    <table>
-        <tr ng-repeat="city in cities">
-            <td>{{city.cityId}}</td>
-            <td>{{city.cityName}}</td>
-            <td></td>
+    <div>
+        <table>
+            <tr ng-repeat="city in cities">
+                <td>{{city.cityName}}</td>
+                <td><button type="submit" ng-click="deleteCity(city)">Delete City</button></td>
             </tr>
-    </table>
-</div>
-<br>
-    <div> <table>
-        <tr ng-repeat = "flight in flights">
-            <td> {{flight.id}}</td>
-            <td> {{flight.id}}</td>
-            <td>123</td>
+           </table>
+    </div>
+    <br>
+    <div>
+        <form >
+            <input type="text" size = "5" ng-model ="city.cityName" />
+            <button type="submit" ng-click="addCity(city)">Add City</button>
+        </form>
+    </div>
+    <br>
 
-
-        </tr>
-    </table>
+    <div>
+        <table>
+            <tr ng-repeat = "flight in flights">
+                <td> {{flight.city.cityName}}</td>
+                <td> {{flight.emptySeat}}</td>
+                <td> {{flight.departureDate}}</td>
+            </tr>
+        </table>
     </div>
 
+
+</div>
 
 </div>
 

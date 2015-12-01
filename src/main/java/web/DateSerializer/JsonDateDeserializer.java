@@ -8,15 +8,19 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.node.TextNode;
 
 import java.io.IOException;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
-public class JsonDateDeserializer extends JsonDeserializer<LocalDateTime> {
+public class JsonDateDeserializer extends JsonDeserializer<Timestamp> {
+    public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
     @Override
-    public LocalDateTime deserialize(JsonParser jp, DeserializationContext ctxt)
+    public Timestamp deserialize(JsonParser jp, DeserializationContext ctxt)
             throws IOException, JsonProcessingException {
 
         ObjectCodec oc = jp.getCodec();
@@ -24,8 +28,8 @@ public class JsonDateDeserializer extends JsonDeserializer<LocalDateTime> {
         String dateString = node.textValue();
 
         Instant instant = Instant.parse(dateString);
-        LocalDateTime dateTime = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
-
-        return dateTime;
+//        LocalDateTime dateTime = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
+        Timestamp date = Timestamp.valueOf(LocalDateTime.parse(dateString, FORMATTER));
+        return date;
     }
 }
