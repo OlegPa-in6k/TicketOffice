@@ -21,11 +21,13 @@ public class MainController extends BaseController {
 
         return new String[] {"first", "second", "qwer"};
     }
+
     @RequestMapping(value = "/cities")
     public List<City> getCities() {
 
         return managerOffice.getAllCities();
     }
+
     @RequestMapping(value = "/flights")
     public List<Flights> getFlights() {
         return managerOffice.getAllFlights();

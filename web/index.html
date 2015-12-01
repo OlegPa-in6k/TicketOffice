@@ -8,19 +8,28 @@
 </head>
 <body ng-app = "myApp">
 
-<div ng-controller="firstCtrl">
-    <div ng-repeat="val in arr">{{val}}</div>
+<div ng-controller="MainController">
 
 <div>
     <table>
         <tr ng-repeat="city in cities">
-
+            <td>{{city.cityId}}</td>
             <td>{{city.cityName}}</td>
             <td></td>
             </tr>
     </table>
 </div>
+<br>
+    <div> <table>
+        <tr ng-repeat = "flight in flights">
+            <td> {{flight.id}}</td>
+            <td> {{flight.id}}</td>
+            <td>123</td>
 
+
+        </tr>
+    </table>
+    </div>
 
 
 </div>

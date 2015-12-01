@@ -1,5 +1,10 @@
 package core.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import web.DateSerializer.JsonDateDeserializer;
+import web.DateSerializer.JsonDateSerializer;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -20,6 +25,7 @@ public class Flights {
     private int id;
     @Column(name = "EmptySeat")
     private int emptySeat;
+
     @Column(name = "departureDate")
     private Timestamp departureDate;
 
@@ -56,22 +62,16 @@ public class Flights {
         this.id = id;
     }
 
-
-
     public Timestamp getDepartureDate() {
         return departureDate;
     }
-
+    @JsonDeserialize(using = JsonDateDeserializer.class)
+    @JsonSerialize(using = JsonDateSerializer.class)
     public void setDepartureDate(String date) {
-
         this.departureDate = Timestamp.valueOf(LocalDateTime.parse(date, FORMATTER));
     }
     public void setDepartureDate(Timestamp date){
         this.departureDate=date;
-    }
-
-    public String getLocalDateTime(){
-        return departureDate.toLocalDateTime().format(DateTimeFormatter.RFC_1123_DATE_TIME);
     }
 
     public int getEmptySeat() {
@@ -87,6 +87,7 @@ public class Flights {
         return getCity().getCityName() + " " + getEmptySeat() + " " + getDepartureDate();
 
     }
+
     public boolean hasSeats(int seat){
         return getEmptySeat()>=seat;
     }

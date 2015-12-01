@@ -1,7 +1,7 @@
 var myApp = angular.module('myApp', []);
 
 
-myApp.controller('firstCtrl', function ($scope, $http) {
+myApp.controller('MainController', function ($scope, $http) {
 
     $http.get('/mvc/api/').then(function (response) {
         $scope.arr = response.data;

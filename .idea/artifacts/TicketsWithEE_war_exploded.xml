@@ -42,6 +42,8 @@
           <element id="library" level="project" name="Maven: org.webjars:angularjs:1.4.8" />
           <element id="library" level="project" name="Maven: org.webjars:bootstrap:4.0.0-alpha" />
           <element id="library" level="project" name="Maven: org.webjars:jquery:1.11.1" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.6.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.6.3" />
         </element>
       </element>
     </root>
