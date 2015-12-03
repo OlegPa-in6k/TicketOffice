@@ -12,6 +12,7 @@
 
     <context:annotation-config/>
     <import resource="spring-root-context.xml"/>
+
     <bean id="htmlPrinter" class="console.Printer.HTMLPirnter"/>
     <bean id="baseDao" class="persistence.BaseDaoImpl" abstract="true"/>
     <bean id="printerImpl" class="console.Printer.PrinterImpl"/>

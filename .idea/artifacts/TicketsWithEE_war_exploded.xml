@@ -6,6 +6,11 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="TicketsWithEE" />
+          <element id="library" level="application" name="angular" />
+          <element id="library" level="application" name="angular-resource" />
+          <element id="library" level="application" name="angular-route" />
+          <element id="library" level="application" name="bootstrap" />
+          <element id="library" level="application" name="jquery" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Java EE 6-Java EE 6" />

@@ -3,45 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.min.js"></script>
+
+    <link rel='stylesheet' href='/resources/bootstrap-3.3.5-dist/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='/resources/bootstrap-3.3.5-dist/js/bootstrap.min.js'>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-resource.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
     <script src = "scripts/app.js"></script>
+    <script src = "scripts/controller.js"></script>
+
 </head>
-<body >
 
-<div ng-app = "myApp">
+<body ng-app = "myApp">
 
-<div ng-controller="MainController">
-    <div>
-        <table>
-            <tr ng-repeat="city in cities">
-                <td>{{city.cityName}}</td>
-                <td><button type="submit" ng-click="deleteCity(city)">Delete City</button></td>
-            </tr>
-           </table>
-    </div>
-    <br>
-    <div>
-        <form >
-            <input type="text" size = "5" ng-model ="cityName" />
-            <button type="submit" ng-click="addCity(cityName)">Add City</button>
-        </form>
-    </div>
-    <br>
+<div class ="header-bar">
+    <nav class="navbar navbar-inverse ">
+        <div class="container-fluid">
+            <div class="navbar-header">
 
-    <div>
-        <table>
-            <tr ng-repeat = "flight in flights">
-                <td> {{flight.city.cityName}}</td>
-                <td> {{flight.emptySeat}}</td>
-                <td> {{flight.departureDate}}</td>
-            </tr>
-        </table>
-    </div>
+              <a class="navbar-brand" href="#/">Main Menu </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/TicketOffice">Ticket Office </a></li>
+                    <li><a href="#/ManagerOffice">Manager Office</a></li>
+                    <li><a href="#/Cities">Cities</a></li>
+                </ul>
+            </div>
 
-
+        </div>
+    </nav>
 </div>
 
-</div>
+<div class="container" ng-view></div>
 
 </body>
 </html>

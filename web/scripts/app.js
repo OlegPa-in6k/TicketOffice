@@ -1,41 +1,23 @@
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ngRoute' ]);
 
-
-myApp.controller('MainController', function ($scope, $http) {
-
-    $http.get("/mvc/angular/cities").then(function (response) {
-        $scope.cities = response.data;
+myApp.config(function ($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: '/views/main.html'
+            })
+            .when('/TicketOffice', {
+                templateUrl: '/views/ticketOffice.html',
+                controller: 'MainController'
+            })
+            .when('/ManagerOffice', {
+                templateUrl: '/views/managerOffice.html',
+                controller: 'MainController'
+            })
+            .when('/Cities', {
+                templateUrl: '/views/cities.html',
+                controller: 'MainController'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
     });
-
-    $http.get("/mvc/angular/flights").then(function (response) {
-        $scope.flights = response.data;
-    });
-
-    $scope.addCity = function(cityName) {
-        $http
-            .post("/mvc/angular/cities/add", cityName)
-            .then(function (response) {
-                updateCities();
-            });
-    };
-
-
-
-    $scope.deleteCity = function (city) {
-        $http
-            .delete("/mvc/angular/cities/delete/" + city.cityId)
-            .then(function (response) {
-                updateCities();
-            });
-    };
-
-    var updateCities = function () {
-        $http
-            .get("/mvc/angular/cities")
-            .then(function (response) {
-                $scope.cities = response.data;
-            });
-    };
-
-
-});

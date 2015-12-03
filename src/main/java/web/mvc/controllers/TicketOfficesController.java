@@ -32,8 +32,6 @@ public class TicketOfficesController extends BaseController {
 
     @RequestMapping(value = "/flights/", method = RequestMethod.POST)
     public String getFlightsByCity(@RequestParam String cityName, ModelMap modelMap) {
-
-
         modelMap.addAttribute("flights", ticketOffice.searchFlightsByCity(cityName));
         return "flights";
     }
