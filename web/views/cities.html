@@ -6,6 +6,9 @@
         <tr ng-repeat="city in cities">
             <td>{{city.cityName}}</td>
             <td>
+                <button class="btn btn-danger" type="submit" ng-click="deleteCity(city.cityId)" value="city.name">Delete</button>
+            </td>
+            <td>
                 <button class="btn" type="submit" ng-click="editCity(city.cityId)" value="city.name">Edit</button>
             </td>
         </tr>
@@ -16,8 +19,7 @@
 <div class="col-sm-12 col-lg-2 panel panel-success">
     <h2>Validation Example</h2>
 
-    <form ng-app="myApp" ng-controller="cityController"
-          name="myForm" novalidate>
+    <form name="myForm" novalidate>
 
         <p>Username:<br>
             <input type="text" name="city" ng-model="city" required>
@@ -26,10 +28,8 @@
 </span>
         </p>
 
-
         <p>
-            <input type="submit"
-                   ng-disabled="myForm.city.$dirty && myForm.city.$invalid ">
+            <input type="submit" ng-click="addCity(city)" ng-disabled="myForm.city.$dirty && myForm.city.$invalid ">
         </p>
 
     </form>
