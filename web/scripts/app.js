@@ -11,7 +11,7 @@ myApp.config(function ($routeProvider) {
             })
             .when('/ManagerOffice', {
                 templateUrl: '/views/managerOffice.html',
-                controller: 'MainController'
+                controller: 'ManagerOfficeController'
             })
             .when('/Cities', {
                 templateUrl: '/views/cities.html',

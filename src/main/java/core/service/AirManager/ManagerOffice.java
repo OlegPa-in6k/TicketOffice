@@ -73,6 +73,7 @@ public class ManagerOffice {
     public List<City> getAllCities(){
         return citySearch.getAll();
     }
+
     public List<Flights> getAllFlights(){
         return flightSearch.getAll();
     }

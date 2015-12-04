@@ -92,9 +92,24 @@ public class Flights {
         return getEmptySeat()>=seat;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Flights flights = (Flights) o;
 
+        if (emptySeat != flights.emptySeat) return false;
+        if (!departureDate.equals(flights.departureDate)) return false;
+        return city.equals(flights.city);
 
+    }
 
-
+    @Override
+    public int hashCode() {
+        int result = emptySeat;
+        result = 31 * result + departureDate.hashCode();
+        result = 31 * result + city.hashCode();
+        return result;
+    }
 }

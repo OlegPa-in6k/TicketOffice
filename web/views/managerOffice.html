@@ -14,7 +14,66 @@
             <td> {{flight.city.cityName}}</td>
             <td> {{flight.emptySeat}}</td>
             <td> {{flight.departureDate}}</td>
+            <td>
+                <button class="btn btn-danger" type="submit" ng-click="deleteFlight(flight.id)">
+                    Delete
+                </button>
+            </td>
         </tr>
         </tbody>
     </table>
 </div>
+<div class="col-sm-6 col-lg-4 panel panel-default">
+    <h2>You can add new flight: </h2>
+
+    <form name="flightForm">
+
+        <label>
+            Choose City*:
+            <select name= "city" ng-model="flight.cityName" >
+                <option ng-repeat = "city in cities"  value = "{{city.cityName}}" id="type">{{city.cityName}}</option>
+            </select>
+
+       </label>
+        <div role="alert">
+            <span style="color:red" class="error" ng-show="flightForm.city.$error.required">Required!</span>
+        </div>
+
+        <label>
+            Enter seat count* :
+            <input type="number" name="seatCount" ng-model="flight.seatCount" ng-minlength="1" ng-maxlength="4"
+                   required>
+        </label>
+        <div role="alert">
+            <span style="color:red" class="error" ng-show="flightForm.seatCount.$error.required">Required!</span>
+        </div>
+
+        <label>
+            Enter departure date* (year-Nmonth-Date hour:minutes):
+            <input type="text" name="departureDate" ng-model="flight.departureDate" required>
+        </label>
+        <div role="alert">
+            <span style="color:red" class="error" ng-show="flightForm.departureDate.$error.required">Required!</span>
+        </div>
+
+        <div role="alert">
+
+            <span style="color:red" class="error" ng-show="flightForm.seatCount.$error.minlength">
+            Too short!</span>
+
+            <span style="color:red" class="error" ng-show="flightForm.seatCount.$error.maxlength">
+            Too long!</span>
+        </div>
+
+        <p>
+            <input type="submit" ng-click="addFlight(flight)"
+                   ng-disabled="flightForm.seatCount.$dirty && flightForm.seatCount.$invalid ">
+        </p>
+
+    </form>
+</div>
+<div class="col-sm-4 col-lg-1 panel panel-default">
+    <a class="btn btn-primary btn-lg" href="#/Cities" role="button">Add City</a>
+</div>
+
+

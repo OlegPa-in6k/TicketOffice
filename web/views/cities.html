@@ -21,27 +21,23 @@
 <div class="col-sm-12 col-lg-3 panel">
     <h2>You can add new city: </h2>
 
-    <form name="myForm">
+    <form name="cityForm">
         <label>
             City title*:
             <input type="text" name="city" ng-model="city" ng-minlength="2" ng-maxlength="14"
                    ng-change="verifyDuplicate(city)" required>
         </label>
         <div role="alert">
-            <span style="color:red" class="error" ng-show="myForm.city.$error.required">Required!</span>
+            <span style="color:red" class="error" ng-show="cityForm.city.$error.required">Required!</span>
         </div>
         <div role="alert">
-      <span style="color:red" class="error" ng-show="myForm.city.$error.minlength">
+      <span style="color:red" class="error" ng-show="cityForm.city.$error.minlength">
         Too short!</span>
-      <span style="color:red" class="error" ng-show="myForm.city.$error.maxlength">
+      <span style="color:red" class="error" ng-show="cityForm.city.$error.maxlength">
         Too long!</span>
         </div>
-        <div role="alert">
-        <span style="color:red" class="error" ng-show="myForm.city.$error.duplicate">
-        City exists!</span>
-        </div>
         <p>
-            <input type="submit" ng-click="addCity(city)" ng-disabled="myForm.city.$dirty && myForm.city.$invalid ">
+            <input type="submit" ng-click="addCity(city)" ng-disabled="cityForm.city.$dirty && cityForm.city.$invalid ">
         </p>
     </form>
 </div>

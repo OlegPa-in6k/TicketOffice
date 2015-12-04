@@ -31,6 +31,12 @@ public class MainController extends BaseController {
         city.setCityName(cityName);
         managerOffice.addCity(city);
     }
+    @RequestMapping(value = "/flights/add", method = RequestMethod.POST)
+    public void addFlight(@RequestBody String  cityName, int seatCount, String departureDate){
+        Flights flight = new Flights();
+        managerOffice.setNewFlight(seatCount, cityName, departureDate);
+    }
+
 
     @RequestMapping(value = "/cities/delete/{cityId}", method = RequestMethod.DELETE)
     public void deleteCity(@PathVariable("cityId") int cityId ){

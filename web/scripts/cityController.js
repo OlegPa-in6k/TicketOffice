@@ -31,18 +31,5 @@ myApp.controller('CityController', function ($scope, $http,  $location) {
             });
     };
 
-    $scope.verifyDuplicate = function(newCity) {
-        var i;
-        var isDuplicate = true;
-
-        for(i = 0; i < $scope.cities.length; i++) {
-            if($scope.cities[i].cityName = newCity) {
-                isDuplicate = false;
-                break;
-            }
-        cities[i].form.myForm.$setValidity('duplicate',!isDuplicate);
-        }
-    };
-
 });
 
