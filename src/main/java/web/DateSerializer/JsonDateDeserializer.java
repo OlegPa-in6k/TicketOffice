@@ -28,8 +28,8 @@ public class JsonDateDeserializer extends JsonDeserializer<Timestamp> {
         String dateString = node.textValue();
 
         Instant instant = Instant.parse(dateString);
-//        LocalDateTime dateTime = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
-        Timestamp date = Timestamp.valueOf(LocalDateTime.parse(dateString, FORMATTER));
+        LocalDateTime dateTime = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
+        Timestamp date = Timestamp.valueOf(dateTime);
         return date;
     }
 }

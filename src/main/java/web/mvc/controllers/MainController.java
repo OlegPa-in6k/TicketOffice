@@ -31,10 +31,11 @@ public class MainController extends BaseController {
         city.setCityName(cityName);
         managerOffice.addCity(city);
     }
+
     @RequestMapping(value = "/flights/add", method = RequestMethod.POST)
-    public void addFlight(@RequestBody String  cityName, int seatCount, String departureDate){
-        Flights flight = new Flights();
-        managerOffice.setNewFlight(seatCount, cityName, departureDate);
+    public void addFlight(@RequestBody Flights flights){
+        System.out.println(flights.getCity().getCityName());
+        //managerOffice.setNewFlight(seatCount, cityName, departureDate);
     }
 
 

@@ -10,11 +10,17 @@ myApp.controller('ManagerOfficeController', function ($scope, $http,  $location)
     $scope.addFlight = function (flight) {
         console.log(flight);
         $http
-            .post("/mvc/angular/flights/add", flight.cityName, flight.seatCount, flight.departureDate)
+            .post("/mvc/angular/flights/add",
+                {
+                    city: $scope.flight.city.cityName,
+                    seatCount : $scope.flight.seatCount,
+                    departureDate : $scope.flight.departureDate
+                })
             .then(function (response) {
                 updateFlights();
             });
     };
+
     var updateFlights = function () {
         $http
             .get("/mvc/angular/flights")
@@ -22,4 +28,5 @@ myApp.controller('ManagerOfficeController', function ($scope, $http,  $location)
                 $scope.cities = response.data;
             });
     };
+
 });

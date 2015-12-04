@@ -6,6 +6,8 @@ import web.DateSerializer.JsonDateDeserializer;
 import web.DateSerializer.JsonDateSerializer;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -23,18 +25,20 @@ public class Flights {
     @Id
     @GeneratedValue
     private int id;
+    @NotNull
+    @Size(min = 0, max = 3)
     @Column(name = "EmptySeat")
     private int emptySeat;
-    @JsonDeserialize(using = JsonDateDeserializer.class)
-    @JsonSerialize(using = JsonDateSerializer.class)
+
+
     @Column(name = "departureDate")
     private Timestamp departureDate;
+
 
 
     @ManyToOne
     @JoinColumn(name = "id_city")
     private City city;
-
 
     public City getCity() {
         return city;
@@ -70,6 +74,9 @@ public class Flights {
     public void setDepartureDate(String date) {
         this.departureDate = Timestamp.valueOf(LocalDateTime.parse(date, FORMATTER));
     }
+
+    @JsonDeserialize(using = JsonDateDeserializer.class)
+    @JsonSerialize(using = JsonDateSerializer.class)
     public void setDepartureDate(Timestamp date){
         this.departureDate=date;
     }

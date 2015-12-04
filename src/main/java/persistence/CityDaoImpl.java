@@ -20,7 +20,4 @@ public class CityDaoImpl extends BaseDaoImpl<City> implements CityDao {
         return (City) query.uniqueResult();
     }
 
-
-
-
 }

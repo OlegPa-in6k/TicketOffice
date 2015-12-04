@@ -26,15 +26,16 @@
 <div class="col-sm-6 col-lg-4 panel panel-default">
     <h2>You can add new flight: </h2>
 
-    <form name="flightForm">
+    <form name="flightForm" >
 
         <label>
             Choose City*:
-            <select name= "city" ng-model="flight.cityName" >
-                <option ng-repeat = "city in cities"  value = "{{city.cityName}}" id="type">{{city.cityName}}</option>
+            <select name="city" ng-model="flight.city">
+                <option ng-repeat="city in cities" value="{{city.cityName}}" id="type">{{city.cityName}}</option>
             </select>
 
-       </label>
+        </label>
+
         <div role="alert">
             <span style="color:red" class="error" ng-show="flightForm.city.$error.required">Required!</span>
         </div>
@@ -44,6 +45,7 @@
             <input type="number" name="seatCount" ng-model="flight.seatCount" ng-minlength="1" ng-maxlength="4"
                    required>
         </label>
+
         <div role="alert">
             <span style="color:red" class="error" ng-show="flightForm.seatCount.$error.required">Required!</span>
         </div>
@@ -52,6 +54,7 @@
             Enter departure date* (year-Nmonth-Date hour:minutes):
             <input type="text" name="departureDate" ng-model="flight.departureDate" required>
         </label>
+
         <div role="alert">
             <span style="color:red" class="error" ng-show="flightForm.departureDate.$error.required">Required!</span>
         </div>
