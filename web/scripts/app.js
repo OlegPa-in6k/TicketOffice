@@ -15,7 +15,7 @@ myApp.config(function ($routeProvider) {
             })
             .when('/Cities', {
                 templateUrl: '/views/cities.html',
-                controller: 'MainController'
+                controller: 'CityController'
             })
             .otherwise({
                 redirectTo: '/'

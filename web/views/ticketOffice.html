@@ -1,0 +1,41 @@
+<div class="col-sm-12 col-lg-4 panel panel-default">
+    <div class="panel-heading">Available flights:</div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Arrival City</th>
+            <th>Empty seats</th>
+            <th>Departure date</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="flight in flights">
+            <td> {{flight.city.cityName}}</td>
+            <td> {{flight.emptySeat}}</td>
+            <td> {{flight.departureDate}}</td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+
+<div class="col-sm-12 col-lg-2 panel panel-default">
+    <div class="panel-heading">You can choose flights by City:</div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Arrival City :</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="city in cities">
+         <td>
+
+            <button class="btn" type="submit" ng-click="showServices(type)" value="city.name">{{city.cityName}}</button>
+         </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
