@@ -1,6 +1,8 @@
 package core.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * Created by Oleg on 27.10.2015.
@@ -15,7 +17,8 @@ public class City {
     @Column(name = "id_city")
     private int cityId;
 
-
+    @NotNull
+    @Size(min = 2, max = 14)
     @Column(name = "cityName")
     private String cityName;
 

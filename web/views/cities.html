@@ -6,7 +6,9 @@
         <tr ng-repeat="city in cities">
             <td>{{city.cityName}}</td>
             <td>
-                <button class="btn btn-danger" type="submit" ng-click="deleteCity(city.cityId)" value="city.name">Delete</button>
+                <button class="btn btn-danger" type="submit" ng-click="deleteCity(city.cityId)" value="city.name">
+                    Delete
+                </button>
             </td>
             <td>
                 <button class="btn" type="submit" ng-click="editCity(city.cityId)" value="city.name">Edit</button>
@@ -16,22 +18,31 @@
     </table>
 </div>
 
-<div class="col-sm-12 col-lg-2 panel panel-success">
-    <h2>Validation Example</h2>
+<div class="col-sm-12 col-lg-3 panel">
+    <h2>You can add new city: </h2>
 
-    <form name="myForm" novalidate>
-
-        <p>Username:<br>
-            <input type="text" name="city" ng-model="city" required>
-<span style="color:red" ng-show="myForm.city.$dirty && myForm.city.$invalid">
-<span ng-show="myForm.city.$error.required">City name is required.</span>
-</span>
-        </p>
-
+    <form name="myForm">
+        <label>
+            City title*:
+            <input type="text" name="city" ng-model="city" ng-minlength="2" ng-maxlength="14"
+                   ng-change="verifyDuplicate(city)" required>
+        </label>
+        <div role="alert">
+            <span style="color:red" class="error" ng-show="myForm.city.$error.required">Required!</span>
+        </div>
+        <div role="alert">
+      <span style="color:red" class="error" ng-show="myForm.city.$error.minlength">
+        Too short!</span>
+      <span style="color:red" class="error" ng-show="myForm.city.$error.maxlength">
+        Too long!</span>
+        </div>
+        <div role="alert">
+        <span style="color:red" class="error" ng-show="myForm.city.$error.duplicate">
+        City exists!</span>
+        </div>
         <p>
             <input type="submit" ng-click="addCity(city)" ng-disabled="myForm.city.$dirty && myForm.city.$invalid ">
         </p>
-
     </form>
 </div>
 
